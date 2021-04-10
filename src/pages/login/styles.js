@@ -1,122 +1,155 @@
 import styled from 'styled-components';
 
-export const Screen = styled.div`
-    display: flex;
-    height: 100%;
+export const Main = styled.div`
     width: 100%;
-    justify-content: center;
-    align-items: center;
+    height: calc(100% - 70px);
+    display: flex;
     flex-direction: row;
 `;
 
-export const DivLogin = styled.div`
-    background-color: #3a3a3a;
-    width: 30%;
-    height: 65%;
+export const LeftDiv = styled.div`
+    width: 50%;
+    height: 100%;
     display: flex;
-    align-items: center;
-    flex-direction: column;
-`;
-
-export const DivInfos = styled.div`
-    display: flex;
-    width: 40%;
-    height: 85%;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    margin-right: 15%;
-    background: #d1cfd4;
+    margin-top: 25px;
 `;
 
-export const NomeAcademia = styled.p`
-    margin-top: 30px;
-    color: #5027b0;
-    font-size: 60px;
-    font-family: Fascinate, sans-serif;
-    height: auto;
-`;
-
-export const Login = styled.p`
-    color: #d1cfd4;
-    font-size: 30px;
-    font-family: Roboto, sans-serif;
-    height: auto;
-    margin-top: 100px;
-    margin-bottom: 30px;
-`;
-
-export const Descricao = styled.p`
-    color: #000;
-    font-size: 20px;
-    font-family: Fascinate, sans-serif;
-    height: auto;
-    text-align: center;
-`;
-
-export const Cpf = styled.input`
-    margin-left: 10px;
-    width: 75%;
+export const RightDiv = styled.div`
+    width: 50%;
     height: 100%;
-    background-color: #d1cfd4;
-    border-radius: 6px;
-    border: none;
-    text-indent: 10px;
-`;
-
-export const Senha = styled.input`
-    margin-left: 10px;
-    width: 75%;
-    height: 100%;
-    background-color: #d1cfd4;
-    border-radius: 6px;
-    border: none;
-    text-indent: 10px;
-`;
-
-export const Invisible = styled.div`
-    width: 100%;
-    height: 8%;
     display: flex;
-    flex-direction: row;
-    align-items: center;
+    flex-direction: column;
     justify-content: center;
-    margin-top: 20px;
+    align-items: center;
 `;
 
-export const Button = styled.button`
+export const Logo = styled.img`
+    height: 80px;
+    width: 350px;
+    background: #fff;
+`;
+
+export const TextInfos = styled.p`
+    height: auto;
+    width: 450px;
+    font-size: 50px;
     color: #fff;
-    width: 30%;
-    height: 8%;
-    background-color: #474a51;
-    border-radius: 6px;
-    border: none;
-    margin-top: 20px;
-
-    &:hover {
-        background-color: #64676f;
-    }
+    margin-left: 50px;
+    margin-top: 35px;
+    font-family: "Fredoka One",Arial, Helvetica, sans-serif;
 `;
 
-export const Text = styled.p`
-    color: #474a51;
-    font-size: 25px;
-    font-family: Roboto, sans-serif;
+export const Grid = styled.div`
+    margin-top: 35px;
     height: auto;
-    text-align: center;
-    margin-top: 55px;
+    width: 450px;
+    display: grid;
+    grid-template-columns: 170px 170px;
+    grid-template-rows: 80px 80px;
+    column-gap: 50px;
+    row-gap: 50px;
+    justify-content: center;
 `;
 
-export const Local = styled.a`
-    color: #474a51;
-    font-size: 20px;
-    font-family: Roboto, sans-serif;
-    height: auto;
-    text-align: center;
-`;
+export const DivCard = styled.div`
+    height: 110px;
+    width: 170px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+`
 
 export const Image = styled.img`
-    width: 100%;
-    height: auto;
-
+    height: 80px;
+    width: 170px;
+    background: #fff;
 `;
+
+export const TextCard = styled.p`
+    font-size: 12px;
+    color: #fff;
+    height: auto;
+    width: auto;
+    margin-top: 10px;
+    font-family: "Fredoka One",Arial, Helvetica, sans-serif;
+`;
+
+export const LoginDiv = styled.div`
+    height: 70%;
+    width: 60%;
+    background: #202024;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+`;
+
+export const DivInput = styled.div`
+    width: 80%;
+    height: 36px;
+    background: #121214;
+    border-radius: 5px;
+    margin-top: 15px;
+    display: flex;
+`;
+
+export const Input = styled.input`
+    height: 36px;
+    width: 100%;
+    border: none;
+    background: #121214;
+    text-indent: 12px;
+    color: #fff;
+    font-family: "Fredoka One",Arial, Helvetica, sans-serif;
+`;
+
+export const SenhaLink = styled.a`
+    font-size: 15px;
+    color: #7B2CBF;
+    height: auto;
+    width: 80%;
+    margin-top: 8px;
+    font-family: "Fredoka One",Arial, Helvetica, sans-serif;
+`;
+
+export const ButtonEntrar = styled.button`
+    height: 36px;
+    width: 80%;
+    border: none;
+    border-radius: 7px;
+    background: #7B2CBF;
+    color: #fff;
+    margin-top: 20px;
+    font-family: "Fredoka One",Arial, Helvetica, sans-serif;
+`;
+
+export const DivTextinhos = styled.div`
+    width: 80%;
+    height: auto;
+    margin-top: 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+`;
+
+export const TextA = styled.p`
+    font-size: 15px;
+    color: #fff;
+    height: auto;
+    margin-top: 8px;
+    font-family: "Fredoka One",Arial, Helvetica, sans-serif;
+`
+
+export const LinkA = styled.a`
+    font-size: 15px;
+    color: #7B2CBF;
+    height: auto;
+    margin-top: 8px;
+    margin-left: 8px;
+    font-family: "Fredoka One",Arial, Helvetica, sans-serif;
+`

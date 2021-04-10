@@ -8,6 +8,14 @@ export default createGlobalStyle`
       height: 100%;
   }
 
+  @font-face {
+  font-family: "Fredoka One";
+  src: url("/fonts/fredoka/fredoka.ttf");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  }
+
   body {
       background: ${props => props.theme.colors.background};
       color: ${props => props.theme.colors.text};
