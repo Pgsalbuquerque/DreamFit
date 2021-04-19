@@ -1,20 +1,19 @@
 import styled from 'styled-components'
 
 export const Main = styled.div`
-    height: 100vh;
     width: 100vw;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: start;
-
 `;
 
 export const Titulo = styled.p`
     font-size: 50px;
     color: #fff;
     font-family: "Fredoka One",Arial, Helvetica, sans-serif;
-    margin-top: 100px;
+    margin-top: 30px;
 `;
 
 export const Form = styled.form`
@@ -40,24 +39,56 @@ export const TextoRadio = styled.p`
     color: #fff;
 `;
 
-export const Input = styled.input`
+export const Grid = styled.div`
+    width: 500px;
+    height: 400px;
+    display: grid;
+    grid-template-columns: 240px 240px;
+    grid-template-rows: 120px 120px 120px;
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
     margin-top: 10px;
-    height: 40px;
-    width: 300px;
+`;
+
+export const Treino = styled.div`
+    width: 240px;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    
+`;
+
+export const InputNome = styled.input`
+    height: 30%;
+    width: 90%;
     background: #524E52;
-    border-radius: 10px;
-    color: #fff;
     border: none;
-    text-indent: 10px;
     outline: none;
+    color: #fff;
+    text-indent: 10px;
     ::placeholder {
         color: #241D24;
     }
-`;
+`
+
+export const InputSec = styled.input`
+    height: 30%;
+    width: 90%;
+    background: #524E52;
+    border: none;
+    outline: none;
+    color: #fff;
+    text-indent: 10px;
+    ::placeholder {
+        color: #241D24;
+    }
+`
 
 export const Button = styled.button`
     height: 40px;
-    width: 5%;
+    width: 100px;
     background: #8257E6;
     border: none;
     outline: none;
@@ -65,35 +96,4 @@ export const Button = styled.button`
     color: #fff;
     margin-top: 10px;
     border-radius: 5px;
-`;
-
-export const Grid = styled.div`
-    display: grid;
-    height: 40vh;
-    width: auto;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
-    grid-row-gap: 10px;
-    margin-top: 10px;
-    overflow-x: hidden;
-`;
-
-export const Card = styled.button`
-    height: 50px;
-    width: 200px;
-    background: #524E52;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    border: none;
-    cursor: pointer;
-    outline: none;
-`;
-
-export const InfoText = styled.p`
-    font-size: 14px;
-    color: #fff;
-    width: 90%;
-    height: 30%;
 `;
