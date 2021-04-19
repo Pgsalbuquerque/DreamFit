@@ -9,11 +9,9 @@ function publicarfeed() {
 
 function PressKey (){ 
     const textarea = document.querySelector('textarea')
-
     if (textarea.value.length > 150) {
         textarea.value = textarea.value.substring(0, textarea.value.length-1)
     }
-        
 }
     
 function ClickButton() {
