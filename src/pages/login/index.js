@@ -12,8 +12,7 @@ function ClickFunction() {
 export default function Teste() {
     return (
     <>
-        <Header tela={"LOGIN"}></Header>
-        <Main>
+        <Main >
             <LeftDiv>
                 <Logo src="logo.png"></Logo>
                 <TextInfos>Faça seu login na plataforma</TextInfos>
@@ -35,7 +34,6 @@ export default function Teste() {
                         <TextCard>RECOMPENSAS</TextCard>
                     </DivCard>
                 </Grid>
-                
             </LeftDiv>
             <RightDiv>
                 <LoginDiv>

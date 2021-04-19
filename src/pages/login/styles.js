@@ -2,9 +2,11 @@ import styled from 'styled-components';
 
 export const Main = styled.div`
     width: 100%;
-    height: calc(100% - 70px);
+    height: 100vh;
     display: flex;
     flex-direction: row;
+    align-items: center;
+    justify-content: center;
 `;
 
 export const LeftDiv = styled.div`
@@ -13,7 +15,7 @@ export const LeftDiv = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 25px;
+    justify-content: center;
 `;
 
 export const RightDiv = styled.div`
@@ -51,6 +53,7 @@ export const Grid = styled.div`
     column-gap: 50px;
     row-gap: 50px;
     justify-content: center;
+    margin-bottom: 8vh;
 `;
 
 export const DivCard = styled.div`
@@ -95,6 +98,7 @@ export const DivInput = styled.div`
     border-radius: 5px;
     margin-top: 15px;
     display: flex;
+    align-items: center;
 `;
 
 export const Input = styled.input`
@@ -105,6 +109,7 @@ export const Input = styled.input`
     text-indent: 12px;
     color: #fff;
     font-family: "Fredoka One",Arial, Helvetica, sans-serif;
+    outline: none;
 `;
 
 export const SenhaLink = styled.a`
@@ -125,6 +130,8 @@ export const ButtonEntrar = styled.button`
     color: #fff;
     margin-top: 20px;
     font-family: "Fredoka One",Arial, Helvetica, sans-serif;
+    outline: none;
+    cursor: pointer;
 `;
 
 export const DivTextinhos = styled.div`

@@ -5,12 +5,27 @@ export default createGlobalStyle`
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      height: 100%;
   }
 
   @font-face {
   font-family: "Fredoka One";
   src: url("/fonts/fredoka/fredoka.ttf");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  }
+
+  @font-face {
+  font-family: "Press Start 2P";
+  src: url("/fonts/p2/p2.ttf");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  }
+
+  @font-face {
+  font-family: "Roboto";
+  src: url("/fonts/roboto/roboto.ttf");
   font-style: normal;
   font-weight: 400;
   font-display: swap;

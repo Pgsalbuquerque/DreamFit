@@ -33,17 +33,10 @@ export default class MyDocument extends Document {
     return (
       <Html lang="pt">
         <Head>
-          <title>Dream Fit</title>
+          <title>DREAM FIT</title>
           <meta charSet="utf-8"/>
           <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
-          <link 
-            href="https://fonts.googleapis.com/css?family=Roboto:400,500,700"
-            rel="stylesheet"
-          />
-          <link href="https://fonts.googleapis.com/css?family=Fascinate:400,500,700" rel="stylesheet"></link>
-          <link rel="icon" href="/academia.ico"/>
-          <link rel="preconnect" href="https://fonts.gstatic.com"/>
-          <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet"></link>
+          <link rel="icon" type="imagem/svg" href="dreamfit.svg" />
         </Head>
         <body>
           <Main />
