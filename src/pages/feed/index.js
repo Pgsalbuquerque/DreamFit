@@ -28,8 +28,6 @@ function ClickButton() {
     Imagem.style.width = "90%"
     Imagem.style.marginLeft = "5%"
     Imagem.style.marginBottom = "5%"
-
-    
 }
 
 function feed() {
