@@ -235,4 +235,6 @@ export const Enviar = styled.button`
     border:none;
     font-size: 20px;
     font-family: "Fredoka One",Arial, Helvetica, sans-serif;
+    margin-top: 10px;
+    border-radius: 5px;
 `;
