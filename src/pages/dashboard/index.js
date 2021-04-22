@@ -21,7 +21,7 @@ function dashboard() {
             </Card>
             <Card href="/publicarfeed" >
                 <TituloCard >Postar no feed</TituloCard>
-                <Image src="postarfeed.svg"></Image>
+                <Image style={{width: "80%", marginLeft: "40px"}} src="postarfeed.svg"></Image>
             </Card>
         </Grid>
       </Main>

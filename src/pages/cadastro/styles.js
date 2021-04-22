@@ -151,12 +151,27 @@ export const Phone = styled.input`
     border:none;
 `
 
-export const DivImagem = styled.div`
-    width: 90%;
+export const Invi = styled.div`
+    width: 100%;
     height: 8%;
     display: flex;
+`;
+
+export const DivImagem = styled.div`
+    width: 50%;
+    height: 100%;
+    display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: center;
+
+`;
+
+export const DivPlano = styled.form`
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: start;
 `;
 
 export const ButtonImage = styled.button`
@@ -167,6 +182,11 @@ export const ButtonImage = styled.button`
     outline: none;
     cursor: pointer;
 `
+
+export const IconImage = styled.img`
+    height: 100%;
+    width: 50px;
+`;
 
 export const Imagem = styled.p`
     width: 25%;
@@ -182,7 +202,7 @@ export const Medidas = styled.div`
 `;
 
 export const Peso = styled.input`
-    width: 22%;
+    width: 15%;
     height: 100%;
     outline: none;
     background: #fff;
@@ -192,8 +212,20 @@ export const Peso = styled.input`
     text-indent: 10px;
 `;
 
+export const Perna = styled.input`
+    width: 15%;
+    height: 100%;
+    outline: none;
+    background: #fff;
+    color: #737575;
+    border-radius: 5px;
+    border:none;
+    text-indent: 10px;
+`;
+
+
 export const Braco = styled.input`
-    width: 22%;
+    width: 15%;
     height: 100%;
     outline: none;
     background: #fff;
@@ -204,7 +236,7 @@ export const Braco = styled.input`
 `;
 
 export const Quadril = styled.input`
-    width: 22%;
+    width: 15%;
     height: 100%;
     outline: none;
     background: #fff;
@@ -215,7 +247,7 @@ export const Quadril = styled.input`
 `;
 
 export const Barriga = styled.input`
-    width: 22%;
+    width: 15%;
     height: 100%;
     outline: none;
     background: #fff;
@@ -237,4 +269,5 @@ export const Enviar = styled.button`
     font-family: "Fredoka One",Arial, Helvetica, sans-serif;
     margin-top: 10px;
     border-radius: 5px;
+    cursor: pointer;
 `;

@@ -33,7 +33,7 @@ function ClickButton() {
           <DivPublicar>
             <RightPublicar>
                 <DivBackground id="divback">
-                    <InputPublicar id="inputback" onChange={PressKey} placeholder="Como foi seu treino hoje?"></InputPublicar>
+                    <InputPublicar id="inputback" onChange={PressKey} placeholder="Escreva aqui"></InputPublicar>
                     <DivImagem id="imgback"></DivImagem>
                     <DivFooter>
                         <Button onClick={ClickButton}><FaFileImage color="#fff" size={25}></FaFileImage></Button>

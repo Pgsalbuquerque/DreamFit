@@ -118,7 +118,6 @@ export const SenhaLink = styled.a`
     height: auto;
     width: 80%;
     margin-top: 8px;
-    font-family: "Fredoka One",Arial, Helvetica, sans-serif;
 `;
 
 export const ButtonEntrar = styled.button`
@@ -149,7 +148,6 @@ export const TextA = styled.p`
     color: #fff;
     height: auto;
     margin-top: 8px;
-    font-family: "Fredoka One",Arial, Helvetica, sans-serif;
 `
 
 export const LinkA = styled.a`
@@ -158,5 +156,4 @@ export const LinkA = styled.a`
     height: auto;
     margin-top: 8px;
     margin-left: 8px;
-    font-family: "Fredoka One",Arial, Helvetica, sans-serif;
 `

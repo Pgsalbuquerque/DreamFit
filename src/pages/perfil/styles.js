@@ -75,6 +75,7 @@ export const ImageButton = styled.button`
     height: 100%;
     border: none;
     outline: none;
+    cursor: pointer;
     background: #000;
 `;
 

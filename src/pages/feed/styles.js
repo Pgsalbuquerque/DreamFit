@@ -166,8 +166,9 @@ export const IconPerfil = styled.img`
 
 export const NomePerfil = styled.p`
     font-size: 18px;
-    color: #606068;
+    color: #C4C4C4;
     margin-left: 20px;
+    font-weight: bold;
 `
 
 export const Desc = styled.p`

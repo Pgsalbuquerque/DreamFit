@@ -21,8 +21,8 @@ export default function Index () {
             <DivCarousel>
                 <Carousel interval={3000} autoPlay infiniteLoop showStatus={false} >
                     <Image src="carousel1.png"></Image>
-                    <Image src="carousel2.png"></Image>
-                    <Image src="carousel3.png"></Image>
+                    <Image src="carousel4.png"></Image>
+                    <Image src="carousel6.jpg"></Image>
                 </Carousel>
             </DivCarousel>
             <DivTextPlanos>
@@ -32,8 +32,8 @@ export default function Index () {
                 <DescPlanos>Temos musculação. aeróbica entre outros asdas das das da sd as da sdasdasdasda sdasdas</DescPlanos>
             </DivTextPlanos>
             <CardsPlanos>
-                <CardPlano></CardPlano>
-                <CardPlano></CardPlano>
+                <CardPlano nome="DREAM" dream valor="R$ 99,90"></CardPlano>
+                <CardPlano nome="PARADISE" valor="R$ 169,90"></CardPlano>
             </CardsPlanos>
             <DivInfosInvisible>
                 <DivInfos>
@@ -50,7 +50,7 @@ export default function Index () {
                 <Textinho>Conheça a família DreamFit faça uma aula experimental</Textinho>
                 <DivLocal>
                     <Icon src="alerticon.svg"></Icon>
-                    <Localizacao href="https://facebook.com" target="_blank">Rua Tal bairro tal, número 0</Localizacao>
+                    <Localizacao href="https://www.google.com.br/maps/place/Rua+Gravat%C3%A1/@-8.2191053,-35.7515962,15z/data=!4m5!3m4!1s0x7aa25207efea7b7:0x911b6cde68677d48!8m2!3d-8.2159077!4d-35.7408589" target="_blank">Rua Tal bairro tal, número 0</Localizacao>
                 </DivLocal>
             </Footer>
             

@@ -20,7 +20,7 @@ export const Input = styled.input`
     text-indent: 10px;
     outline: none;
     ::placeholder {
-        color: #241D24;
+        color: #fff;
     }
 `;
 
@@ -46,7 +46,7 @@ export const Input2 = styled.div`
 
 export const TextInput = styled.p`
     font-size: 16px;
-    color: #241D24;
+    color: #fff;
 `;
 
 export const InputV = styled.input`
@@ -59,7 +59,7 @@ export const InputV = styled.input`
     text-indent: 5px;
     color: #fff;
     ::placeholder {
-        color: #241D24;
+        color: #fff;
         text-align: center;
     }
 `;
@@ -82,4 +82,35 @@ export const Button = styled.button`
     color: #fff;
     margin-top: 40px;
     border-radius: 5px;
+`;
+
+export const ButtonImage = styled.button`
+    width: 40px;
+    height: 70%;
+    background: #524E52;
+    cursor: pointer;
+    outline: none;
+    border: none;
+`;
+
+export const ImageButton = styled.img`
+    height: 100%;
+    width: 100%;
+`;
+
+export const DescImage = styled.p`
+    font-size: 16px;
+    color: #fff;
+`;
+
+export const InputImage = styled.div`
+    margin-top: 10px;
+    height: 40px;
+    width: 200px;
+    background: #524E52;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
 `;

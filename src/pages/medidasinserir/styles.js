@@ -20,7 +20,7 @@ export const Input = styled.input`
     text-indent: 20px;
     outline: none;
     ::placeholder {
-        color: #241D24;
+        color: #fff;
     }
 `;
 
@@ -46,7 +46,7 @@ export const Input2 = styled.div`
 
 export const TextInput = styled.p`
     font-size: 16px;
-    color: #241D24;
+    color: #fff;
 `;
 
 export const InputV = styled.input`
@@ -59,7 +59,7 @@ export const InputV = styled.input`
     text-indent: 5px;
     color: #fff;
     ::placeholder {
-        color: #241D24;
+        color: #fff;
         text-align: center;
     }
 `;

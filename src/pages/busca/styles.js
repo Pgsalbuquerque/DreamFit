@@ -51,13 +51,13 @@ export const Input = styled.input`
     text-indent: 10px;
     outline: none;
     ::placeholder {
-        color: #241D24;
+        color: #fff;
     }
 `;
 
 export const Button = styled.button`
     height: 40px;
-    width: 5%;
+    width: 10%;
     background: #8257E6;
     border: none;
     outline: none;
@@ -65,6 +65,7 @@ export const Button = styled.button`
     color: #fff;
     margin-top: 10px;
     border-radius: 5px;
+    font-family: "Fredoka One",Arial, Helvetica, sans-serif;
 `;
 
 export const Grid = styled.div`

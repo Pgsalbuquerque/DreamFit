@@ -22,7 +22,7 @@ function perfil() {
                             <Foto src="pedro.png"></Foto>
                             <Icon>
                                 <ImageButton>
-                                    <FaFileImage size={16} color="#fff"></FaFileImage>
+                                    <img src="uploadimage.svg" style={{width: '100%', height: '100%'}}></img>
                                 </ImageButton>
                             </Icon>
                             

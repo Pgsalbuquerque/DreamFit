@@ -71,6 +71,7 @@ export const DescPlanos = styled.p`
     color: #000;
     margin-top: 30%;
     text-align: center;
+    width: 95%;
 `;
 
 export const Linha = styled.div`

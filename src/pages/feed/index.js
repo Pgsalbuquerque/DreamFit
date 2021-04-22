@@ -45,7 +45,7 @@ function feed() {
                         <InputPublicar id="inputback" onChange={PressKey} placeholder="Como foi seu treino hoje?"></InputPublicar>
                         <DivImagem id="imgback"></DivImagem>
                         <DivFooter>
-                            <Button onClick={ClickButton}><FaFileImage color="#fff" size={25}></FaFileImage></Button>
+                            <Button onClick={ClickButton}><img style={{width: "100%", height:"100%"}} src="uploadimage.svg"></img></Button>
                             <ButtonEnviar>Enviar</ButtonEnviar>
                         </DivFooter>
                     </DivBackground>
