@@ -207,3 +207,15 @@ export const TextInfo = styled.p`
     text-indent: center;
     margin-left: 10px;
 `;
+
+export const ButtonLogOut = styled.button`
+    height: 40px;
+    width: 80px;
+    background-color: #5A189A;
+    color: #fff;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-family: "Fredoka One",Arial, Helvetica, sans-serif;
+    border-radius: 10px;
+`;

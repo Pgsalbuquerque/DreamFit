@@ -69,7 +69,7 @@ export const InputNome = styled.input`
     color: #fff;
     text-indent: 10px;
     ::placeholder {
-        color: #fff;
+        color: rgba(255,255,255,0.4);
     }
 `
 
@@ -82,7 +82,7 @@ export const InputSec = styled.input`
     color: #fff;
     text-indent: 10px;
     ::placeholder {
-        color: #fff;
+        color: rgba(255,255,255,0.4);
     }
 `
 

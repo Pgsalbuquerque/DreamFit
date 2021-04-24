@@ -70,7 +70,7 @@ export const Button = styled.button`
 
 export const Grid = styled.div`
     display: grid;
-    height: 40vh;
+    max-height: 40vh;
     width: auto;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
@@ -80,7 +80,7 @@ export const Grid = styled.div`
 `;
 
 export const Card = styled.button`
-    height: 50px;
+    height: 65px;
     width: 200px;
     background: #524E52;
     display: flex;

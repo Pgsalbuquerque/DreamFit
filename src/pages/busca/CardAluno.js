@@ -2,11 +2,23 @@ import React from 'react';
 
 import { Card, InfoText } from './styles';
 
-function busca() {
-  return <Card>
-      <InfoText>Pedro Albuquerque</InfoText>
-      <InfoText>pgsa@cin.ufpe.br</InfoText>
-      <InfoText>12808236409</InfoText>
+import { useRouter} from 'next/router'
+
+function busca(props) {
+
+  const routes = useRouter()
+
+  function Click(){
+    routes.push({
+      pathname: '/cadastrotreino',
+      query: { uuid: props.uuid },
+    })
+  }
+
+  return <Card onClick={Click}>
+      <InfoText>{props.nome}</InfoText>
+      <InfoText>{props.email}</InfoText>
+      <InfoText>{props.cpf}</InfoText>
   </Card>;
 }
 

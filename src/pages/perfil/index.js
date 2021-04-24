@@ -1,15 +1,29 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 
 import { Main, Perfil, ImagemFundo, PerfilInfos, Bloco1, Bloco2, Bloco3, FotoDiv, Foto,
 Icon, ImageButton, NomeIdade, Nome, Idade, Plano, PlanoText, NomePlanoText,TextMedidas,
-Medidas, Medida, IconMedida, ValorMedida, SetaMedida, InfoDiv, IconInfo, TextInfo } from './styles';
+Medidas, Medida, IconMedida, ValorMedida, SetaMedida, InfoDiv, IconInfo, TextInfo, ButtonLogOut } from './styles';
 
 import {FaFileImage} from 'react-icons/fa'
+
+import api from '../../api/index'
+
+import {useRouter} from 'next/router'
 
 import Header from '../_headergeral'
 
 function perfil() {
-  return (
+    const routes = useRouter()
+
+
+    function Click(){
+        localStorage.setItem('tokendreamfit', '')
+        localStorage.setItem('dreamfituuid', '')
+        routes.push('/login')
+
+    }
+
+    return (
       <>
         
         <Main>
@@ -71,6 +85,7 @@ function perfil() {
                             <TextInfo>18:00-19:00</TextInfo>
                         </InfoDiv>
                     </Bloco3>
+                    <ButtonLogOut onClick={Click}>SAIR</ButtonLogOut>
                 </PerfilInfos>
             </Perfil>
         </Main>

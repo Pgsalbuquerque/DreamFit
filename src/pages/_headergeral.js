@@ -1,13 +1,11 @@
 import {Main, Logo, Link, LinkLogo, Links, DivTransparente} from './_headerstyles'
 
-export default function HeaderInfos (props) {
+export default function HeaderGeral (props) {
     const telas = ["FEED", "HORARIOS", "RECOMPENSAS", "PERFIL", "TREINOS"]
 
     const handleClick = () => {
         console.log("clicked")
     }
-
-    console.log(props.tela)
 
     return ( props.positionF 
         ? 
@@ -18,7 +16,7 @@ export default function HeaderInfos (props) {
                 <Logo src="/logo.png"/>
                 </LinkLogo>
                 <Links>
-                    {telas.map(e => e != props.tela ? <Link href={`/${e}`.toLowerCase()} >{e}</Link> : <div/> )}  
+                    {telas.map((e, index) => e != props.tela ? <Link key={index} href={`/${e}`.toLowerCase()} >{e}</Link> : <div/> )}  
                 </Links>
             </DivTransparente>
         </Main> 
@@ -28,7 +26,7 @@ export default function HeaderInfos (props) {
 
                 <Logo src="/logo.png"/>
                 <Links>
-                    {telas.map(e => e != props.tela ? <Link href={`/${e}`.toLowerCase()} >{e}</Link> : <div/> )}  
+                    {telas.map((e, index) => e != props.tela ? <Link key={index} href={`/${e}`.toLowerCase()} >{e}</Link> : <div/> )}  
                 </Links>
             </DivTransparente>
         </Main>
