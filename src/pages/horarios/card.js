@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Card, Card1, Card2, Card3, TextCard, TextHorarioCard, VagasDiv, IconVagas,
-TipoTreino, Button, TextButton } from './styles';
+TipoTreino, Button, TextButton } from '../../styles/horarios/styles';
 
 import {FaUserFriends} from 'react-icons/fa'
 

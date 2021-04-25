@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 
 import { Main, DivCadastro, Nome, Email, Cpf, Password, DataGenero, Data, UsuarioPhone,
 InputRadio, Phone, DivImagem, ButtonImage, Imagem, Medidas, Peso, Braco, Quadril, Barriga, Enviar,
-CpfSenha, TextoRadio, Form, Titulo,DivPlano, Invi, IconImage,Perna } from './styles';
+CpfSenha, TextoRadio, Form, Titulo,DivPlano, Invi, IconImage,Perna, InputI } from '../../styles/cadastro/styles';
 
 import jwt, { JsonWebTokenError } from 'jsonwebtoken'
 
@@ -30,6 +30,7 @@ function cadastro() {
   const [barriga, setBarriga] = useState('')
   const [perna, setPerna] = useState('')
   const [render, setRender] = useState(false)
+  const [file, setFile] = useState()
 
   async function ClickEnviar() {
     const token = localStorage.getItem('tokendreamfit')
@@ -114,10 +115,7 @@ function cadastro() {
               </UsuarioPhone>
               <Invi>
                 <DivImagem>
-                    <ButtonImage>
-                      <IconImage src="uploadimage.svg"></IconImage>
-                    </ButtonImage>
-                    <Imagem></Imagem>
+                    <InputI type='file' onChange={e => setFile(e.target.files[0])}></InputI>
                 </DivImagem>
                 <DivPlano>
                   <Form style={{width: '80%'}}>

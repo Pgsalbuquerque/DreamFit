@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { Main, Titulo, Form, InputRadio,TextoRadio, Input, Button,Grid  } from './styles';
+import { Main, Titulo, Form, InputRadio,TextoRadio, Input, Button,Grid  } from '../../styles/busca/styles';
 
 import CardAluno from './CardAluno'
 

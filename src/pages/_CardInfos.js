@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Main, Titulo, Descricao, Icon } from './cardstyle';
+import { Main, Titulo, Descricao, Icon } from '../styles/cardstyle';
 
 function pages(props) {
   return (

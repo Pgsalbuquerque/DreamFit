@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Main, Input, Input2, Titulo, Invisible, TextInput, InputV, Button } from './styles';
+import { Main, Input, Input2, Titulo, Invisible, TextInput, InputV, Button } from '../../styles/medidasinserir/styles';
 
 function recompensainserir() {
   return (

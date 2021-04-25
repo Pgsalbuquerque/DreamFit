@@ -1,6 +1,6 @@
 import React, {useState,useEffect} from 'react';
 
-import { Main, Input, Input2, Titulo, Invisible, TextInput, InputV, Button, ImageButton, ButtonImage, InputImage, DescImage } from './styles';
+import { Main, Input, Input2, Titulo, Invisible, TextInput, InputV, Button, ImageButton, ButtonImage, InputImage, DescImage } from '../../styles/recompensainserir/styles';
 
 import jwt from 'jsonwebtoken'
 

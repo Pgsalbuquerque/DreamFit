@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Main, Titulo, RightDiv, LoginDiv, DivInput, Input, ButtonEntrar, IconConfirm } from './styles';
+import { Main, Titulo, RightDiv, LoginDiv, DivInput, Input, ButtonEntrar, IconConfirm } from '../../styles/acessoacademia/styles';
 
 import {FaUserAlt, FaLock} from 'react-icons/fa'
 

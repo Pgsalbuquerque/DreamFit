@@ -163,8 +163,11 @@ export const DivImagem = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 10px;
 
 `;
+
+export const InputI = styled.input``;
 
 export const DivPlano = styled.form`
     width: 50%;

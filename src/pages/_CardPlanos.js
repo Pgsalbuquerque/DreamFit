@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Main, Yellow, White, Telinha, Plano, PlanoNome, TextApartir, Valor, DescPlanos,
-Linha, Diferencial, Items, Button } from './cardplanostyles';
+Linha, Diferencial, Items, Button } from '../styles/cardplanostyles';
 
 export default function pages(props) {
   return (

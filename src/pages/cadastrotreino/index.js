@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { Main, Titulo, Form,InputRadio, TextoRadio, Grid, Treino, InputNome, InputSec, Button } from './styles';
+import { Main, Titulo, Form,InputRadio, TextoRadio, Grid, Treino, InputNome, InputSec, Button } from '../../styles/cadastrotreino/styles';
 
 import {useRouter} from 'next/router'
 

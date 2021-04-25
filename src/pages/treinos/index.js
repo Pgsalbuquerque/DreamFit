@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 
 import { Grid, BlocoTreinos, Main, Planos, ImageTreino, OpacityDiv, TextoFicha,InfosDiv,
-IconInfos, TextoInfos } from './styles';
+IconInfos, TextoInfos } from '../../styles/treinos/styles';
 
 import {FaInfoCircle} from 'react-icons/fa'
 
@@ -11,7 +11,7 @@ import Header from '../_headergeral'
 import Treino from './CardTreino'
 
 function treinos() {
-  const [treinos, setTreinos] = useState({})
+  const [treinos, setTreinos] = useState({back:[], chest: [], leg: []})
 
   useEffect(async () => {
     const token = localStorage.getItem('tokendreamfit')
@@ -29,122 +29,51 @@ function treinos() {
     <Header tela="TREINOS"></Header>
     <Main>
     <Planos>
-      <ImageTreino>
+      <ImageTreino style={{background: 'url("/ficha1.png")', backgroundRepeat: 'no-repeat', backgroundSize: 'cover'}}>
         <OpacityDiv>
           <TextoFicha>FICHA A</TextoFicha>
         </OpacityDiv>
       </ImageTreino>
-      <Grid>
-        {/* {treinos.chest.map(e => <BlocoTreinos>
-
-        </BlocoTreinos>)} */}
-
           <BlocoTreinos>
-            <Treino impar titulo="LEG 45" series="4x15"></Treino>
-            <Treino  titulo="LEG 60" series="2x20"></Treino>
-            <Treino impar titulo="HALTER" series="4x30"></Treino>
-            <Treino  titulo="INCLINAD" series="3x15"></Treino>
-            <Treino impar titulo="FLEXORA" series="5x20"></Treino>
+            {treinos.back.map(e => <Treino titulo={e.name} series={e.reps}></Treino>)}
+            {/* <Treino titulo="LEG 60" series="2x20"></Treino>
+            <Treino titulo="HALTER" series="4x30"></Treino>
+            <Treino titulo="INCLINAD" series="3x15"></Treino>
+            <Treino titulo="FLEXORA" series="5x20"></Treino>
+            <Treino titulo="FLEXORA" series="5x20"></Treino> */}
           </BlocoTreinos>
-          <BlocoTreinos>
-            <Treino impar titulo="LEG 45" series="4x15"></Treino>
-            <Treino  titulo="LEG 60" series="2x20"></Treino>
-            <Treino impar titulo="HALTER" series="4x30"></Treino>
-            <Treino  titulo="INCLINAD" series="3x15"></Treino>
-            <Treino impar titulo="FLEXORA" series="5x20"></Treino>
-          </BlocoTreinos>
-          <BlocoTreinos>
-            <Treino impar titulo="LEG 45" series="4x15"></Treino>
-            <Treino  titulo="LEG 60" series="2x20"></Treino>
-            <Treino impar titulo="HALTER" series="4x30"></Treino>
-            <Treino  titulo="INCLINAD" series="3x15"></Treino>
-            <Treino impar titulo="FLEXORA" series="5x20"></Treino>
-          </BlocoTreinos>
-          <BlocoTreinos>
-            <Treino impar titulo="LEG 45" series="4x15"></Treino>
-            <Treino  titulo="LEG 60" series="2x20"></Treino>
-            <Treino impar titulo="HALTER" series="4x30"></Treino>
-            <Treino  titulo="INCLINAD" series="3x15"></Treino>
-            <Treino impar titulo="FLEXORA" series="5x20"></Treino>
-          </BlocoTreinos>
-          
-          
-      </Grid>
     </Planos>
     <Planos>
-      <ImageTreino>
+      <ImageTreino style={{background: 'url("/ficha2.png")', backgroundRepeat: 'no-repeat', backgroundSize: 'cover'}}>
         <OpacityDiv>
           <TextoFicha>FICHA B</TextoFicha>
         </OpacityDiv>
       </ImageTreino>
-      <Grid>
       <BlocoTreinos>
-            <Treino impar titulo="LEG 45" series="4x15"></Treino>
-            <Treino  titulo="LEG 60" series="2x20"></Treino>
-            <Treino impar titulo="HALTER" series="4x30"></Treino>
-            <Treino  titulo="INCLINAD" series="3x15"></Treino>
-            <Treino impar titulo="FLEXORA" series="5x20"></Treino>
-          </BlocoTreinos>
-          <BlocoTreinos>
-            <Treino impar titulo="LEG 45" series="4x15"></Treino>
-            <Treino  titulo="LEG 60" series="2x20"></Treino>
-            <Treino impar titulo="HALTER" series="4x30"></Treino>
-            <Treino  titulo="INCLINAD" series="3x15"></Treino>
-            <Treino impar titulo="FLEXORA" series="5x20"></Treino>
-          </BlocoTreinos>
-          <BlocoTreinos>
-            <Treino impar titulo="LEG 45" series="4x15"></Treino>
-            <Treino  titulo="LEG 60" series="2x20"></Treino>
-            <Treino impar titulo="HALTER" series="4x30"></Treino>
-            <Treino  titulo="INCLINAD" series="3x15"></Treino>
-            <Treino impar titulo="FLEXORA" series="5x20"></Treino>
-          </BlocoTreinos>
-          <BlocoTreinos>
-            <Treino impar titulo="LEG 45" series="4x15"></Treino>
-            <Treino  titulo="LEG 60" series="2x20"></Treino>
-            <Treino impar titulo="HALTER" series="4x30"></Treino>
-            <Treino  titulo="INCLINAD" series="3x15"></Treino>
-            <Treino impar titulo="FLEXORA" series="5x20"></Treino>
-          </BlocoTreinos>
-          
-      </Grid>
+            {treinos.leg.map(e => <Treino titulo={e.name} series={e.reps}></Treino>)}
+            {/* <Treino titulo="LEG 45" series="4x15"></Treino>
+            <Treino titulo="LEG 60" series="2x20"></Treino>
+            <Treino titulo="HALTER" series="4x30"></Treino>
+            <Treino titulo="INCLINAD" series="3x15"></Treino>
+            <Treino titulo="FLEXORA" series="5x20"></Treino>
+            <Treino titulo="FLEXORA" series="5x20"></Treino> */}
+      </BlocoTreinos>
     </Planos>
     <Planos>
-      <ImageTreino>
+      <ImageTreino style={{background: 'url("/ficha3.png")', backgroundRepeat: 'no-repeat', backgroundSize: 'cover'}}>
         <OpacityDiv>
           <TextoFicha>FICHA C</TextoFicha>
         </OpacityDiv>
       </ImageTreino>
-      <Grid>
       <BlocoTreinos>
-            <Treino impar titulo="LEG 45" series="4x15"></Treino>
-            <Treino  titulo="LEG 60" series="2x20"></Treino>
-            <Treino impar titulo="HALTER" series="4x30"></Treino>
-            <Treino  titulo="INCLINAD" series="3x15"></Treino>
-            <Treino impar titulo="FLEXORA" series="5x20"></Treino>
+            {treinos.chest.map(e => <Treino titulo={e.name} series={e.reps}></Treino>)}
+            {/* <Treino titulo="LEG 45" series="4x15"></Treino>
+            <Treino titulo="LEG 60" series="2x20"></Treino>
+            <Treino titulo="HALTER" series="4x30"></Treino>
+            <Treino titulo="INCLINAD" series="3x15"></Treino>
+            <Treino titulo="FLEXORA" series="5x20"></Treino>
+            <Treino titulo="FLEXORA" series="5x20"></Treino> */}
           </BlocoTreinos>
-          <BlocoTreinos>
-            <Treino impar titulo="LEG 45" series="4x15"></Treino>
-            <Treino  titulo="LEG 60" series="2x20"></Treino>
-            <Treino impar titulo="HALTER" series="4x30"></Treino>
-            <Treino  titulo="INCLINAD" series="3x15"></Treino>
-            <Treino impar titulo="FLEXORA" series="5x20"></Treino>
-          </BlocoTreinos>
-          <BlocoTreinos>
-            <Treino impar titulo="LEG 45" series="4x15"></Treino>
-            <Treino  titulo="LEG 60" series="2x20"></Treino>
-            <Treino impar titulo="HALTER" series="4x30"></Treino>
-            <Treino  titulo="INCLINAD" series="3x15"></Treino>
-            <Treino impar titulo="FLEXORA" series="5x20"></Treino>
-          </BlocoTreinos>
-          <BlocoTreinos>
-            <Treino impar titulo="LEG 45" series="4x15"></Treino>
-            <Treino  titulo="LEG 60" series="2x20"></Treino>
-            <Treino impar titulo="HALTER" series="4x30"></Treino>
-            <Treino  titulo="INCLINAD" series="3x15"></Treino>
-            <Treino impar titulo="FLEXORA" series="5x20"></Treino>
-          </BlocoTreinos>
-      </Grid>
     </Planos>
     </Main>
     <InfosDiv>

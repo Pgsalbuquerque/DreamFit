@@ -1,4 +1,4 @@
-import {Main, Logo, Button, TextButton} from './_headerstyles'
+import {Main, Logo, Button, TextButton} from '../styles/_headerstyles'
 
 export default function HeaderInfos () {
 

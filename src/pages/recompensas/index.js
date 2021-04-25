@@ -4,7 +4,7 @@ import {FaInfoCircle} from 'react-icons/fa'
 import Card from './_card'
 
 import {Main, LeftDiv, Image, FitCoin, Coin, QtCoins, TextFitCoins, InfosDiv, InfosText,
-Grid,DivTransparente} from './styles'
+Grid,DivTransparente} from '../../styles/recompensas/styles'
 
 export default function Recompensas () {
 

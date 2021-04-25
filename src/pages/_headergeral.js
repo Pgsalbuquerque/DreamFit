@@ -1,4 +1,4 @@
-import {Main, Logo, Link, LinkLogo, Links, DivTransparente} from './_headerstyles'
+import {Main, Logo, Link, LinkLogo, Links, DivTransparente} from '../styles/_headerstyles'
 
 export default function HeaderGeral (props) {
     const telas = ["FEED", "HORARIOS", "RECOMPENSAS", "PERFIL", "TREINOS"]

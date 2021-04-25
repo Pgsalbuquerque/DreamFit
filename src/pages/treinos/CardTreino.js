@@ -1,18 +1,14 @@
 import React from 'react';
 
-import { Treino, TituloTreinoImpar, SeriesTreinoImpar, TituloTreinoPar, SeriesTreinoPar } from './styles';
+import { Treino, TituloTreino, SeriesTreino, DivSec } from '../../styles/treinos/styles';
 
 function Treinos(props) {
   return (
-      props.impar ? 
         <Treino>
-            <TituloTreinoImpar>{props.titulo}</TituloTreinoImpar>
-            <SeriesTreinoImpar>{props.series}</SeriesTreinoImpar>
-        </Treino>
-        :
-        <Treino>
-            <TituloTreinoPar>{props.titulo}</TituloTreinoPar>
-            <SeriesTreinoPar>{props.series}</SeriesTreinoPar>
+            <TituloTreino>{props.titulo}</TituloTreino>
+            <DivSec>
+              <SeriesTreino>{props.series}</SeriesTreino>
+            </DivSec>
         </Treino>
   )
 }

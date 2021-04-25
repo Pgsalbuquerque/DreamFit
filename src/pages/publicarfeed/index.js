@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Main, DivPublicar, RightPublicar, Titulo,
-    DivBackground, InputPublicar, DivImagem, Button, DivFooter, ButtonEnviar } from './styles';
+    DivBackground, InputPublicar, DivImagem, Button, DivFooter, ButtonEnviar } from '../../styles/publicarfeed/styles';
 
 import {FaFileImage} from 'react-icons/fa'
 

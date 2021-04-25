@@ -1,6 +1,6 @@
 import {FaInfoCircle, FaShoppingBag, FaDollarSign} from 'react-icons/fa'
 
-import {CardT, ImageCard, Hr, Invisible, TituloCard, Infos, TextInfos, IconDiv, ButtonCard} from './styles'
+import {CardT, ImageCard, Hr, Invisible, TituloCard, Infos, TextInfos, IconDiv, ButtonCard} from '../../styles/recompensas/styles'
 
 export default function Card (props) {
 

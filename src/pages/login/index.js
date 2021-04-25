@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 
 import {Main, LeftDiv, RightDiv, Logo, TextInfos, Grid, Image, DivCard, TextCard, LoginDiv, Input,
-DivInput, SenhaLink, ButtonEntrar, DivTextinhos, TextA, LinkA} from './styles'
+DivInput, SenhaLink, ButtonEntrar, DivTextinhos, TextA, LinkA} from '../../styles/login/styles'
 
 import {FaLock, FaUserAlt} from 'react-icons/fa'
 

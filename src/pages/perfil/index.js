@@ -3,7 +3,7 @@ import React, {useEffect, useState} from 'react';
 import { Main, Perfil, ImagemFundo, PerfilInfos, Bloco1, Bloco2, Bloco3, FotoDiv, Foto,
 Icon, ImageButton, NomeIdade, Nome, Idade, Plano, PlanoText, NomePlanoText,TextMedidas,
 Medidas, Medida, IconMedida, ValorMedida, SetaMedida, InfoDiv, IconInfo, TextInfo,
-ButtonLogOut, DivPeso } from './styles';
+ButtonLogOut, DivPeso } from '../../styles/perfil/styles';
 
 import {FaFileImage} from 'react-icons/fa'
 
@@ -16,12 +16,29 @@ import Header from '../_headergeral'
 function perfil() {
     const routes = useRouter()
     const [dados, setDados] = useState({})
+    const [file, setFile] = useState()
 
     function Click(){
         localStorage.setItem('tokendreamfit', '')
         localStorage.setItem('dreamfituuid', '')
         routes.push('/login')
 
+    }
+
+    async function AtualizarFoto(file){
+        const uuid = localStorage.getItem('dreamfituuid')
+        const token = localStorage.getItem('tokendreamfit')
+        console.log(token)
+        console.log(uuid)
+
+        let formdata = new FormData()
+
+        formdata.append('image', file)
+        formdata.append('uuid', uuid)
+
+        await api.post('files', formdata, {headers: {"Authorization": token}})
+        .then(r => routes.reload())
+        .catch(e => alert(e.response.message))
     }
 
     useEffect(async () => {
@@ -45,11 +62,10 @@ function perfil() {
                 <PerfilInfos>
                     <Bloco1>
                         <FotoDiv>
-                            <Foto src="pedro.png"></Foto>
+                            <Foto src={dados.profilePicture} ></Foto>
                             <Icon>
-                                <ImageButton>
-                                    <img src="uploadimage.svg" style={{width: '100%', height: '100%'}}></img>
-                                </ImageButton>
+                                <input type="file" style={{position: 'absolute', opacity: 0}} onChange={e => AtualizarFoto(e.target.files[0])}></input>
+                                <img src="uploadimage.svg" style={{width: '100%', height: '100%', marginLeft: '50%'}}></img>
                             </Icon>
                             
                         </FotoDiv>

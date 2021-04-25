@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Main, Titulo, Grid, Card, TituloCard, Image } from './styles';
+import { Main, Titulo, Grid, Card, TituloCard, Image } from '../../styles/dashboard/styles';
 
 function dashboard() {
   return (

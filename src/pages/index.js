@@ -8,7 +8,7 @@ import { Carousel } from 'react-responsive-carousel';
 import { Image, DivCarousel, Main, DivHorariosInvisible,DivHorarios, DivInfosInvisible,
 DivInfos, DivCards, Footer,Textinho, DivLocal,Localizacao, Icon, DivMaior, DivMenor,
 ImageHorarios,TituloHorario, DescHorarios, DivDesc, Div20, Div80, CardsPlanos,
- DescPlanos, TextPlanos, DivTextPlanos, TextPlanos2,DivEncapsulamento  } from './styles'
+ DescPlanos, TextPlanos, DivTextPlanos, TextPlanos2,DivEncapsulamento  } from '../styles/styles'
 
 import Header from './_headerinfos'
 import Card from './_CardInfos'

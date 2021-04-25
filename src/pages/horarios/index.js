@@ -5,7 +5,7 @@ import Card from './card'
 import {FaInfoCircle} from 'react-icons/fa'
 import Header from '../_headergeral'
 import { Main, LeftDiv, DivTransparente, Grid, Image, InfosDiv, InfosText,
-TextHorarios } from './styles';
+TextHorarios } from '../../styles/horarios/styles';
 
 import api from '../../api/index'
 

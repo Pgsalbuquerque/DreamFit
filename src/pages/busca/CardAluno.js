@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Card, InfoText } from './styles';
+import { Card, InfoText } from '../../styles/busca/styles';
 
 import { useRouter} from 'next/router'
 

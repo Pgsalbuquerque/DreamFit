@@ -2,7 +2,7 @@ import React from 'react';
 import { FaGuitar } from 'react-icons/fa';
 
 import { CardPubli, DivPerfil, Desc, ImagemPubli, DivIcons, IconPerfil, NomePerfil, IconPublicacoes,
-DivIcon, TextIcon, ButtonLike } from './styles';
+DivIcon, TextIcon, ButtonLike } from '../../styles/feed/styles';
 
 function CardPublicacoes() {
   return (

@@ -9,6 +9,7 @@ export const Planos = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 20px;
 `;
 
 export const OpacityDiv = styled.div`
@@ -23,9 +24,7 @@ export const OpacityDiv = styled.div`
 export const ImageTreino = styled.div`
     width: 15vw;
     height: 18vh;
-    background: url("/ficha2.png");
-    background-repeat: no-repeat;
-    background-size: cover;
+    
     position: fixed;
     display: flex;
     flex-direction: column;
@@ -53,10 +52,9 @@ export const Grid = styled.div`
 `;
 
 export const BlocoTreinos = styled.div`
-    width: 150px;
-    height: 160px;
-    background: #524E52;
-    margin-left: 25px;
+    width: 15vw;
+    height: 300px;
+    margin-top: 22vh;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
@@ -65,41 +63,37 @@ export const BlocoTreinos = styled.div`
 `;
 
 export const Treino = styled.div`
-    height: 14%;
-    width: 80%;
+    height: 30px;
+    width: 100%;
     border-radius: 5px;
-    background: #C4C4C4;
+    background: #282628;
     display: flex;
     align-items: center;
     justify-content: space-between;
 `;
 
-export const TituloTreinoPar = styled.p`
-    font-size: 14px;
-    color: #5A189A;
-    font-family: "Fredoka One",Arial, Helvetica, sans-serif;
-    margin-left: 10px;
-`
+export const DivSec = styled.div`
+    background: #3E393E;
+    height: 100%;
+    display: flex;
+    border-radius: 0 4px 4px 0;
+    align-items: center;
+    justify-content: center;
+    width: 25%;
+`;
 
-export const TituloTreinoImpar = styled.p`
+export const TituloTreino = styled.p`
     font-size: 14px;
-    color: #8B1EA7;
+    color: #fff;
     font-family: "Fredoka One",Arial, Helvetica, sans-serif;
-    margin-left: 10px;
+    margin-left: 20px;
 `
-
-export const SeriesTreinoPar = styled.p`
+export const SeriesTreino = styled.p`
     font-size: 14px;
-    color: #000;
+    width: 100%;
+    color: #fff;
     font-family: "Fredoka One",Arial, Helvetica, sans-serif;
-    margin-right: 10px;
-`
-
-export const SeriesTreinoImpar = styled.p`
-    font-size: 14px;
-    color: #554E55;
-    font-family: "Fredoka One",Arial, Helvetica, sans-serif;
-    margin-right: 10px;
+    text-align: center;
 `
 
 export const InfosDiv = styled.div`

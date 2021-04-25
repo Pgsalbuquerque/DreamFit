@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Main, DivPublicar, LeftPublicar, RightPublicar, Imagem, DivPublicacoes, IconPublicar,
-DivBackground, InputPublicar, DivImagem, Button, DivFooter, ButtonEnviar } from './styles';
+DivBackground, InputPublicar, DivImagem, Button, DivFooter, ButtonEnviar } from '../../styles/feed/styles';
 
 
 import Header from '../_headergeral'
