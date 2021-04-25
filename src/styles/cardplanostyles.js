@@ -30,7 +30,7 @@ export const White = styled.div`
 `;
 
 export const Telinha = styled.div`
-    height: 15%;
+    height: 83px;
     width: 250px;
     position: absolute;
     background: #000;
