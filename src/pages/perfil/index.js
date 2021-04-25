@@ -87,17 +87,17 @@ function perfil() {
                                 <SetaMedida src={`${dados.legMeasurementChange}.svg`} ></SetaMedida>
                             </Medida>
                             <Medida>
-                                <IconMedida src={dados.gender == '1' ? "bracomasculino.svg" : "bracofeminino.svg"}></IconMedida>
+                                <IconMedida src={dados.gender == 'Masculino' ? "bracomasculino.svg" : "bracofeminino.svg"}></IconMedida>
                                 <ValorMedida>{dados.armMeasurement}</ValorMedida>
                                 <SetaMedida src={`${dados.armMeasurementChange}.svg`}></SetaMedida>
                             </Medida>
                             <Medida>
-                                <IconMedida src={dados.gender == '1' ? "barrigamasculino.svg" : "barrigafeminino.svg"}></IconMedida>
+                                <IconMedida src={dados.gender == 'Masculino' ? "barrigamasculino.svg" : "barrigafeminino.svg"}></IconMedida>
                                 <ValorMedida>{dados.bellyMeasurement}</ValorMedida>
                                 <SetaMedida src={`${dados.bellyMeasurementChange}.svg`}></SetaMedida>
                             </Medida>
                             <Medida>
-                                <IconMedida src={dados.gender == '1' ? "quadrilmasculino.svg" : "quadrilfeminino.svg"}></IconMedida>
+                                <IconMedida src={dados.gender == 'Masculino' ? "quadrilmasculino.svg" : "quadrilfeminino.svg"}></IconMedida>
                                 <ValorMedida>{dados.hipMeasurement}</ValorMedida>
                                 <SetaMedida src={`${dados.hipMeasurementChange}.svg`}></SetaMedida>
                             </Medida>

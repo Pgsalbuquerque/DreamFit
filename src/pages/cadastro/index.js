@@ -18,7 +18,7 @@ function cadastro() {
   const [email, setEmail] = useState('')
   const [cpf, setCpf] = useState('')
   const [senha, setSenha] = useState('')
-  const [genero, setGenero] = useState(0)
+  const [genero, setGenero] = useState('Feminino')
   const [data, setData] = useState('')
   const [hierarquia, setHierarquia] = useState('')
   const [telefone, setTelefone] = useState('')
@@ -97,9 +97,9 @@ function cadastro() {
               </CpfSenha>
               <DataGenero>
                   <Form>
-                    <InputRadio type="radio" onClick={() => setGenero(1)} id="masculino" name="role" value="masculino"></InputRadio>
+                    <InputRadio type="radio" onClick={() => setGenero('Masculino')} id="masculino" name="role" value="masculino"></InputRadio>
                     <TextoRadio for="masculino">Masculino</TextoRadio>
-                    <InputRadio type="radio" onClick={() => setGenero(2)} id="feminino" name="role" value="feminino"></InputRadio>
+                    <InputRadio type="radio" onClick={() => setGenero('Feminino')} id="feminino" name="role" value="feminino"></InputRadio>
                     <TextoRadio for="feminino">Feminino</TextoRadio>
                   </Form>
                   <Data type="date" value={data} onChange={e => setData(e.target.value)}></Data>
