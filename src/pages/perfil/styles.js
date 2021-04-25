@@ -98,6 +98,7 @@ export const Idade = styled.p`
     font-size: 16px;
     color: #fff;
     font-family: "Fredoka One",Arial, Helvetica, sans-serif;
+    margin-left: 10px;
 `;
 
 export const Plano = styled.div`
@@ -125,12 +126,12 @@ export const NomePlanoText = styled.div`
 
 
 export const Bloco2 = styled.div`
-    height: 48%;
+    height: 56%;
     width: 80%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     background: #29292E;
     border-radius: 10px;
 `;
@@ -140,10 +141,11 @@ export const TextMedidas = styled.p`
     font-size: 24px;
     color: #fff;
     font-family: "Fredoka One",Arial, Helvetica, sans-serif;
+    margin-top: 10px;
 `;
 
 export const Medidas = styled.div`
-    height: 70%;
+    height: 68%;
     width: 100%;
     display: grid;      
     grid-template-columns: 1fr 1fr;
@@ -151,6 +153,15 @@ export const Medidas = styled.div`
     grid-column-gap: 10px;
     grid-row-gap: 10px;
 `
+
+export const DivPeso = styled.div`
+    height: 32%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+`;
 
 export const Medida = styled.div`
     height: 100%;
@@ -161,8 +172,8 @@ export const Medida = styled.div`
 `
 
 export const IconMedida = styled.img`
-    height: 80%;
-    width: 30%;
+    height: 60%;
+    width: 20%;
 `;
 
 export const ValorMedida = styled.p`
@@ -177,7 +188,7 @@ export const SetaMedida = styled.img`
 `;
 
 export const Bloco3 = styled.div`
-    height: 18%;
+    height: 14%;
     width: 100%;
     display: flex;
     align-items: center;

@@ -2,7 +2,8 @@ import React, {useEffect, useState} from 'react';
 
 import { Main, Perfil, ImagemFundo, PerfilInfos, Bloco1, Bloco2, Bloco3, FotoDiv, Foto,
 Icon, ImageButton, NomeIdade, Nome, Idade, Plano, PlanoText, NomePlanoText,TextMedidas,
-Medidas, Medida, IconMedida, ValorMedida, SetaMedida, InfoDiv, IconInfo, TextInfo, ButtonLogOut } from './styles';
+Medidas, Medida, IconMedida, ValorMedida, SetaMedida, InfoDiv, IconInfo, TextInfo,
+ButtonLogOut, DivPeso } from './styles';
 
 import {FaFileImage} from 'react-icons/fa'
 
@@ -14,7 +15,7 @@ import Header from '../_headergeral'
 
 function perfil() {
     const routes = useRouter()
-
+    const [dados, setDados] = useState({})
 
     function Click(){
         localStorage.setItem('tokendreamfit', '')
@@ -22,6 +23,17 @@ function perfil() {
         routes.push('/login')
 
     }
+
+    useEffect(async () => {
+        const uuid = localStorage.getItem('dreamfituuid')
+        const token = localStorage.getItem('tokendreamfit')
+        await api.get(`/users/private_profile/${uuid}`, {headers: {"Authorization": token}})
+        .then(r => {
+            console.log(r.data)
+            setDados(r.data)
+        })
+        .catch(e => alert(e.response.data))
+    }, [])
 
     return (
       <>
@@ -42,8 +54,8 @@ function perfil() {
                             
                         </FotoDiv>
                         <NomeIdade>
-                            <Nome>Pedro Gaybriel</Nome>
-                            <Idade>19 anos</Idade>
+                            <Nome>{dados.name}</Nome>
+                            <Idade>{dados.birthDate}</Idade>
                         </NomeIdade>
                         <Plano>
                             <PlanoText>PLANO</PlanoText>
@@ -54,31 +66,36 @@ function perfil() {
                         <TextMedidas>Medidas</TextMedidas>
                         <Medidas>
                             <Medida>
-                                <IconMedida src="peso.svg"></IconMedida>
-                                <ValorMedida>56</ValorMedida>
-                                <SetaMedida src="setabaixo.svg"></SetaMedida>
+                                <IconMedida src="perna.svg"></IconMedida>
+                                <ValorMedida>{dados.legMeasurement}</ValorMedida>
+                                <SetaMedida src={`${dados.legMeasurementChange}.svg`} ></SetaMedida>
                             </Medida>
                             <Medida>
-                                <IconMedida src="braco.svg"></IconMedida>
-                                <ValorMedida>56</ValorMedida>
-                                <SetaMedida src="setacima.svg"></SetaMedida>
+                                <IconMedida src={dados.gender == '1' ? "bracomasculino.svg" : "bracofeminino.svg"}></IconMedida>
+                                <ValorMedida>{dados.armMeasurement}</ValorMedida>
+                                <SetaMedida src={`${dados.armMeasurementChange}.svg`}></SetaMedida>
                             </Medida>
                             <Medida>
-                                <IconMedida src="barriga.svg"></IconMedida>
-                                <ValorMedida>56</ValorMedida>
-                                <SetaMedida src="setabaixo.svg"></SetaMedida>
+                                <IconMedida src={dados.gender == '1' ? "barrigamasculino.svg" : "barrigafeminino.svg"}></IconMedida>
+                                <ValorMedida>{dados.bellyMeasurement}</ValorMedida>
+                                <SetaMedida src={`${dados.bellyMeasurementChange}.svg`}></SetaMedida>
                             </Medida>
                             <Medida>
-                                <IconMedida src="quadril.svg"></IconMedida>
-                                <ValorMedida>56</ValorMedida>
-                                <SetaMedida src="setacima.svg"></SetaMedida>
+                                <IconMedida src={dados.gender == '1' ? "quadrilmasculino.svg" : "quadrilfeminino.svg"}></IconMedida>
+                                <ValorMedida>{dados.hipMeasurement}</ValorMedida>
+                                <SetaMedida src={`${dados.hipMeasurementChange}.svg`}></SetaMedida>
                             </Medida>
                         </Medidas>
+                        <DivPeso>
+                                <IconMedida src="peso.svg"></IconMedida>
+                                <ValorMedida>{dados.weight}</ValorMedida>
+                                <SetaMedida src={`${dados.weightChange}.svg`} style={{marginLeft: "10px"}}></SetaMedida>
+                        </DivPeso>
                     </Bloco2>
                     <Bloco3>
                         <InfoDiv>
                             <IconInfo src="coin.svg"></IconInfo>
-                            <TextInfo>250</TextInfo>
+                            <TextInfo>{dados.fitcoins}</TextInfo>
                         </InfoDiv>
                         <InfoDiv>
                             <IconInfo src="time.svg"></IconInfo>
