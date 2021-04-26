@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 
 import {FaArrowLeft, FaArrowRight} from 'react-icons/fa'
 
@@ -10,12 +10,50 @@ DivInfos, DivCards, Footer,Textinho, DivLocal,Localizacao, Icon, DivMaior, DivMe
 ImageHorarios,TituloHorario, DescHorarios, DivDesc, Div20, Div80, CardsPlanos,
  DescPlanos, TextPlanos, DivTextPlanos, TextPlanos2,DivEncapsulamento  } from '../styles/styles'
 
+import { useRouter } from 'next/router'
+
+import jwt from 'jsonwebtoken'
+ 
+import api from '../api/index'
+
 import Header from './_headerinfos'
 import Card from './_CardInfos'
 import CardPlano from './_CardPlanos'
 
 export default function Index () {
+    const [render, setRender] = useState(false)
+    const routes = useRouter()
+
+    useEffect(async () => {
+        const token = localStorage.getItem('tokendreamfit')
+        const data = jwt.decode(token.substring(7))
+        await api.get('/users/token',{headers: {"Authorization": token}})
+        .then(r => {
+            if(r.data.status == 202) {
+                if (data.role == 20) {
+                    routes.push('dashboard')
+                } else {
+                    routes.push('horarios')
+                }
+            } else if (r.data.status == 200) {
+                localStorage.setItem('tokendreamfit', r.data.token)
+                if (data.role == 20) {
+                    routes.push('dashboard')
+                } else {
+                    routes.push('horarios')
+                }
+            }
+        })
+        .catch( e => {
+            setRender(true)
+        }
+        )
+      }, [])
+
     return (
+        render == false 
+        ? <div></div>
+        :
         <Main>
             <Header/>
             <DivCarousel>

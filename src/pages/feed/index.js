@@ -1,8 +1,13 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 
 import { Main, DivPublicar, LeftPublicar, RightPublicar, Imagem, DivPublicacoes, IconPublicar,
 DivBackground, InputPublicar, DivImagem, Button, DivFooter, ButtonEnviar } from '../../styles/feed/styles';
 
+import {useRouter} from 'next/router'
+
+import jwt from 'jsonwebtoken'
+
+import api from '../../api/index'
 
 import Header from '../_headergeral'
 import CardPubli from './CardPubli'
@@ -16,6 +21,8 @@ function PressKey (){
     }
     
 }
+
+
 
 function ClickButton() {
     const Div = document.querySelector("#divback");
@@ -31,41 +38,67 @@ function ClickButton() {
 }
 
 function feed() {
-  return (
-    <>
-        <Header tela="FEED" positionF/>
-        <Main>
-            <Imagem></Imagem>
-            <DivPublicar>
-                <LeftPublicar>
-                    <IconPublicar src="/gui.png"></IconPublicar>
-                </LeftPublicar>
-                <RightPublicar >
-                    <DivBackground id="divback">
-                        <InputPublicar id="inputback" onChange={PressKey} placeholder="Como foi seu treino hoje?"></InputPublicar>
-                        <DivImagem id="imgback"></DivImagem>
-                        <DivFooter>
-                            <Button onClick={ClickButton}><img style={{width: "100%", height:"100%"}} src="uploadimage.svg"></img></Button>
-                            <ButtonEnviar>Enviar</ButtonEnviar>
-                        </DivFooter>
-                    </DivBackground>
-                </RightPublicar>
-            </DivPublicar>
-            <DivPublicacoes>
-                <CardPubli/>
-                <CardPubli/>
-                <CardPubli/>
-                <CardPubli/>
-                <CardPubli/>
-                <CardPubli/>
-                <CardPubli/>
-                <CardPubli/>
-            </DivPublicacoes>
-            
+    const routes = useRouter()
+    const [render, setRender] = useState(false)
 
-        </Main>
-    </>
-  )
+    useEffect(async () => {
+        const token = localStorage.getItem('tokendreamfit')
+        const data = jwt.decode(token.substring(7))
+        console.log(data)
+        await api.get('/users/token',{headers: {"Authorization": token}})
+            .then(r => {
+                if(r.data.status == 202) {
+                  setRender(true)
+                    
+                } else if (r.data.status == 200) {
+                    localStorage.setItem('tokendreamfit', r.data.token)
+                    setRender(true)
+                }
+            })
+            .catch( e => {
+                routes.push('/login')
+            }
+            )
+      }, [])
+
+    return (
+        render == false 
+        ? <div></div>
+        :
+        <>
+            <Header tela="FEED" positionF/>
+            <Main>
+                <Imagem></Imagem>
+                <DivPublicar>
+                    <LeftPublicar>
+                        <IconPublicar src="/gui.png"></IconPublicar>
+                    </LeftPublicar>
+                    <RightPublicar >
+                        <DivBackground id="divback">
+                            <InputPublicar id="inputback" onChange={PressKey} placeholder="Como foi seu treino hoje?"></InputPublicar>
+                            <DivImagem id="imgback"></DivImagem>
+                            <DivFooter>
+                                <Button onClick={ClickButton}><img style={{width: "100%", height:"100%"}} src="uploadimage.svg"></img></Button>
+                                <ButtonEnviar>Enviar</ButtonEnviar>
+                            </DivFooter>
+                        </DivBackground>
+                    </RightPublicar>
+                </DivPublicar>
+                <DivPublicacoes>
+                    <CardPubli/>
+                    <CardPubli/>
+                    <CardPubli/>
+                    <CardPubli/>
+                    <CardPubli/>
+                    <CardPubli/>
+                    <CardPubli/>
+                    <CardPubli/>
+                </DivPublicacoes>
+                
+
+            </Main>
+        </>
+    )
 }
 
 export default feed;

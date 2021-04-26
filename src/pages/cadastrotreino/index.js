@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import { Main, Titulo, Form,InputRadio, TextoRadio, Grid, Treino, InputNome, InputSec, Button } from '../../styles/cadastrotreino/styles';
 
 import {useRouter} from 'next/router'
+
+import jwt from 'jsonwebtoken'
 
 import api from '../../api/index'
 
@@ -21,7 +23,38 @@ function cadastrotreino() {
     const [sec5, setSec5] = useState()
     const [exercicio6, setExercicio6] = useState()
     const [sec6, setSec6] = useState()
+    const [render, setRender] = useState(false)
 
+
+    useEffect(async () => {
+        const token = localStorage.getItem('tokendreamfit')
+        const data = jwt.decode(token.substring(7))
+        console.log(data)
+        await api.get('/users/token',{headers: {"Authorization": token}})
+            .then(r => {
+                if(r.data.status == 202) {
+                    if (data.role == 20){
+                        setRender(true)
+                    } else {
+                        alert('Você não tem permissão para acessar essa rota')
+                        routes.push('/login')
+                    }
+                    
+                } else if (r.data.status == 200) {
+                    localStorage.setItem('tokendreamfit', r.data.token)
+                    if (data.role == 20){
+                        setRender(true)
+                    } else {
+                        alert('Você não tem permissão para acessar essa rota')
+                        routes.push('/login')
+                    }
+                  }
+            })
+            .catch( e => {
+                routes.push('/login')
+            }
+            )
+      }, [])
 
     async function Click() {
         const token = localStorage.getItem('tokendreamfit')
@@ -59,47 +92,47 @@ function cadastrotreino() {
           }).catch(e => console.log(e))
   }
 
-  return (
-    
-
-    <Main>
-            <Titulo>Cadastrar treino</Titulo>
-            <Form>
-                <InputRadio type="radio" id="Peito" name="role" value="Peito" onClick={() => setTipo('Peito')} ></InputRadio>
-                <TextoRadio for="Peito">Peito</TextoRadio>
-                <InputRadio type="radio" id="Perna" name="role" value="Perna" onClick={() => setTipo('Perna')}></InputRadio>
-                <TextoRadio for="Perna">Perna</TextoRadio>
-                <InputRadio type="radio" id="Costas" name="role" value="Costas" onClick={() => setTipo('Costas')}></InputRadio>
-                <TextoRadio for="Costas">Costa</TextoRadio>
-            </Form>
-            <Grid>
-                <Treino>
-                    <InputNome placeholder="Nome do treino" value={exercicio} onChange={e => setExercicio(e.target.value)}></InputNome>
-                    <InputSec placeholder="Seções (2x10)" value={sec} onChange={e => setSec(e.target.value)}></InputSec>
-                </Treino>
-                <Treino>
-                    <InputNome placeholder="Nome do treino" value={exercicio2} onChange={e => setExercicio2(e.target.value)}></InputNome>
-                    <InputSec placeholder="Seções (2x10)" value={sec2} onChange={e => setSec2(e.target.value)}></InputSec>
-                </Treino>
-                <Treino>
-                    <InputNome placeholder="Nome do treino" value={exercicio3} onChange={e => setExercicio3(e.target.value)}></InputNome>
-                    <InputSec placeholder="Seções (2x10)" value={sec3} onChange={e => setSec3(e.target.value)}></InputSec>
-                </Treino>
-                <Treino>
-                    <InputNome placeholder="Nome do treino" value={exercicio4} onChange={e => setExercicio4(e.target.value)}></InputNome>
-                    <InputSec placeholder="Seções (2x10)" value={sec4} onChange={e => setSec4(e.target.value)}></InputSec>
-                </Treino>
-                <Treino>
-                    <InputNome placeholder="Nome do treino" value={exercicio5} onChange={e => setExercicio5(e.target.value)}></InputNome>
-                    <InputSec placeholder="Seções (2x10)" value={sec5} onChange={e => setSec5(e.target.value)}></InputSec>
-                </Treino>
-                <Treino>
-                    <InputNome placeholder="Nome do treino" value={exercicio6} onChange={e => setExercicio6(e.target.value)}></InputNome>
-                    <InputSec placeholder="Seções (2x10)" value={sec6} onChange={e => setSec6(e.target.value)}></InputSec>
-                </Treino>
-            </Grid>
-            <Button onClick={Click}>Enviar</Button>
-    </Main>
+  return (render == false 
+            ? <div></div>
+            :
+            <Main>
+                    <Titulo>Cadastrar treino</Titulo>
+                    <Form>
+                        <InputRadio type="radio" id="Peito" name="role" value="Peito" onClick={() => setTipo('Peito')} ></InputRadio>
+                        <TextoRadio for="Peito">Peito</TextoRadio>
+                        <InputRadio type="radio" id="Perna" name="role" value="Perna" onClick={() => setTipo('Perna')}></InputRadio>
+                        <TextoRadio for="Perna">Perna</TextoRadio>
+                        <InputRadio type="radio" id="Costas" name="role" value="Costas" onClick={() => setTipo('Costas')}></InputRadio>
+                        <TextoRadio for="Costas">Costa</TextoRadio>
+                    </Form>
+                    <Grid>
+                        <Treino>
+                            <InputNome placeholder="Nome do treino" value={exercicio} onChange={e => setExercicio(e.target.value)}></InputNome>
+                            <InputSec placeholder="Seções (2x10)" value={sec} onChange={e => setSec(e.target.value)}></InputSec>
+                        </Treino>
+                        <Treino>
+                            <InputNome placeholder="Nome do treino" value={exercicio2} onChange={e => setExercicio2(e.target.value)}></InputNome>
+                            <InputSec placeholder="Seções (2x10)" value={sec2} onChange={e => setSec2(e.target.value)}></InputSec>
+                        </Treino>
+                        <Treino>
+                            <InputNome placeholder="Nome do treino" value={exercicio3} onChange={e => setExercicio3(e.target.value)}></InputNome>
+                            <InputSec placeholder="Seções (2x10)" value={sec3} onChange={e => setSec3(e.target.value)}></InputSec>
+                        </Treino>
+                        <Treino>
+                            <InputNome placeholder="Nome do treino" value={exercicio4} onChange={e => setExercicio4(e.target.value)}></InputNome>
+                            <InputSec placeholder="Seções (2x10)" value={sec4} onChange={e => setSec4(e.target.value)}></InputSec>
+                        </Treino>
+                        <Treino>
+                            <InputNome placeholder="Nome do treino" value={exercicio5} onChange={e => setExercicio5(e.target.value)}></InputNome>
+                            <InputSec placeholder="Seções (2x10)" value={sec5} onChange={e => setSec5(e.target.value)}></InputSec>
+                        </Treino>
+                        <Treino>
+                            <InputNome placeholder="Nome do treino" value={exercicio6} onChange={e => setExercicio6(e.target.value)}></InputNome>
+                            <InputSec placeholder="Seções (2x10)" value={sec6} onChange={e => setSec6(e.target.value)}></InputSec>
+                        </Treino>
+                    </Grid>
+                    <Button onClick={Click}>Enviar</Button>
+            </Main>
   )
 }
 

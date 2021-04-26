@@ -7,7 +7,7 @@ import {FaLock, FaUserAlt} from 'react-icons/fa'
 
 import { useRouter } from 'next/router'
 
-import axios from 'axios'
+import jwt from 'jsonwebtoken'
 
 import api from '../../api/index'
 
@@ -35,13 +35,22 @@ export default function Login() {
 
     useEffect(async () => {
         const token = localStorage.getItem('tokendreamfit')
+        const data = jwt.decode(token.substring(7))
         await api.get('/users/token',{headers: {"Authorization": token}})
         .then(r => {
             if(r.data.status == 202) {
-                routes.push('/horarios')
+                if (data.role == 20) {
+                    routes.push('dashboard')
+                } else {
+                    routes.push('horarios')
+                }
             } else if (r.data.status == 200) {
                 localStorage.setItem('tokendreamfit', r.data.token)
-                routes.push('/horarios')
+                if (data.role == 20) {
+                    routes.push('dashboard')
+                } else {
+                    routes.push('horarios')
+                }
             }
         })
         .catch( e => {
