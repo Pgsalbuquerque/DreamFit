@@ -22,7 +22,7 @@ export const ImagemFundo = styled.div`
     background: url('/perfil.png');
     opacity: 0.7;
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
     position: fixed;
     z-index: -10;
 `;
@@ -67,7 +67,7 @@ export const Foto = styled.img`
 
 export const Icon = styled.div`
     width: 100%;
-    height: 15%;
+    height: 20%;
     display: flex;
     justify-content: flex-end;
 `;
