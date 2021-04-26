@@ -48,17 +48,18 @@ export const Bloco1 = styled.div`
 `;
 
 export const FotoDiv = styled.div`
-    height: 80%;
-    width: 80px;
+    height: 90px;
+    width: 90px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    
 `;
 
 export const Foto = styled.img`
-    width: 50px;
-    height: 50px;
+    width: 5vw;
+    height: 5vw;
     border-radius: 50%;
     background-repeat: no-repeat;
     background-size: cover;
@@ -66,7 +67,7 @@ export const Foto = styled.img`
 
 export const Icon = styled.div`
     width: 100%;
-    height: 25%;
+    height: 15%;
     display: flex;
     justify-content: flex-end;
 `;
