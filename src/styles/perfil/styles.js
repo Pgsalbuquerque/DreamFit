@@ -22,7 +22,7 @@ export const ImagemFundo = styled.div`
     background: url('/perfil.png');
     opacity: 0.7;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
     position: fixed;
     z-index: -10;
 `;
