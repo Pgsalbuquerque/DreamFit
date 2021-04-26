@@ -54,13 +54,14 @@ export const FotoDiv = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    
 `;
 
 export const Foto = styled.img`
-    width: 75%;
-    height: 75%;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
 `;
 
 export const Icon = styled.div`

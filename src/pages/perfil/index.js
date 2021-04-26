@@ -47,6 +47,7 @@ function perfil() {
         await api.get(`/users/private_profile/${uuid}`, {headers: {"Authorization": token}})
         .then(r => {
             console.log(r.data)
+            console.log(r.data)
             setDados(r.data)
         })
         .catch(e => alert(e.response.data))
@@ -62,7 +63,7 @@ function perfil() {
                 <PerfilInfos>
                     <Bloco1>
                         <FotoDiv>
-                            <Foto src={dados.profilePicture} ></Foto>
+                            <Foto src={dados.profilePicture ? dados.profilePicture : '/iconperfil.png'} ></Foto>
                             <Icon>
                                 <input type="file" style={{position: 'absolute', opacity: 0}} onChange={e => AtualizarFoto(e.target.files[0])}></input>
                                 <img src="uploadimage.svg" style={{width: '100%', height: '100%', marginLeft: '50%'}}></img>
@@ -75,7 +76,7 @@ function perfil() {
                         </NomeIdade>
                         <Plano>
                             <PlanoText>PLANO</PlanoText>
-                            <NomePlanoText>DREAM</NomePlanoText>
+                            <NomePlanoText>{dados.plan}</NomePlanoText>
                         </Plano>
                     </Bloco1>
                     <Bloco2>
@@ -87,17 +88,17 @@ function perfil() {
                                 <SetaMedida src={`${dados.legMeasurementChange}.svg`} ></SetaMedida>
                             </Medida>
                             <Medida>
-                                <IconMedida src={dados.gender == 'Masculino' ? "bracomasculino.svg" : "bracofeminino.svg"}></IconMedida>
+                                <IconMedida src={dados.gender == "Masculino" ? "bracomasculino.svg" : "bracofeminino.svg"}></IconMedida>
                                 <ValorMedida>{dados.armMeasurement}</ValorMedida>
                                 <SetaMedida src={`${dados.armMeasurementChange}.svg`}></SetaMedida>
                             </Medida>
                             <Medida>
-                                <IconMedida src={dados.gender == 'Masculino' ? "barrigamasculino.svg" : "barrigafeminino.svg"}></IconMedida>
+                                <IconMedida src={dados.gender == "Masculino" ? "barrigamasculino.svg" : "barrigafeminino.svg"}></IconMedida>
                                 <ValorMedida>{dados.bellyMeasurement}</ValorMedida>
                                 <SetaMedida src={`${dados.bellyMeasurementChange}.svg`}></SetaMedida>
                             </Medida>
                             <Medida>
-                                <IconMedida src={dados.gender == 'Masculino' ? "quadrilmasculino.svg" : "quadrilfeminino.svg"}></IconMedida>
+                                <IconMedida src={dados.gender == "Masculino" ? "quadrilmasculino.svg" : "quadrilfeminino.svg"}></IconMedida>
                                 <ValorMedida>{dados.hipMeasurement}</ValorMedida>
                                 <SetaMedida src={`${dados.hipMeasurementChange}.svg`}></SetaMedida>
                             </Medida>
@@ -115,7 +116,10 @@ function perfil() {
                         </InfoDiv>
                         <InfoDiv>
                             <IconInfo src="time.svg"></IconInfo>
-                            <TextInfo>18:00-19:00</TextInfo>
+                            <div>
+                                <TextInfo>{`${dados.nextClass ? dados.nextClass.startDate.substring(0,5) : 'Agende um '}${dados.nextClass ? '-' : ''}${dados.nextClass ? dados.nextClass.endDate.substring(0,5) : 'Horário'}`}</TextInfo>
+                                <TextInfo style={{fontSize: '16px', color: '#c1c1c1'}}>{dados.nextClass ? dados.nextClass.type : ''}</TextInfo>
+                            </div>
                         </InfoDiv>
                     </Bloco3>
                     <ButtonLogOut onClick={Click}>SAIR</ButtonLogOut>
