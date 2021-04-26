@@ -33,7 +33,7 @@ function cadastrotreino() {
         await api.get('/users/token',{headers: {"Authorization": token}})
             .then(r => {
                 if(r.data.status == 202) {
-                    if (data.role == 20){
+                    if (data.role != 60){
                         setRender(true)
                     } else {
                         alert('Você não tem permissão para acessar essa rota')
@@ -42,7 +42,7 @@ function cadastrotreino() {
                     
                 } else if (r.data.status == 200) {
                     localStorage.setItem('tokendreamfit', r.data.token)
-                    if (data.role == 20){
+                    if (data.role != 60){
                         setRender(true)
                     } else {
                         alert('Você não tem permissão para acessar essa rota')
