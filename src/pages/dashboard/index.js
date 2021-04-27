@@ -68,6 +68,14 @@ function dashboard() {
                     <TituloCard >Postar no feed</TituloCard>
                     <Image style={{width: "80%", marginLeft: "40px"}} src="postarfeed.svg"></Image>
                 </Card>
+                <Card href="/acessoacademia" >
+                    <TituloCard >Acesso a academia</TituloCard>
+                    <Image style={{width: "80%", marginLeft: "40px"}} src="postarfeed.svg"></Image>
+                </Card>
+                <Card href="/recompensaporpessoa" >
+                    <TituloCard >Recompensa por pessoa</TituloCard>
+                    <Image style={{width: "80%", marginLeft: "40px"}} src="postarfeed.svg"></Image>
+                </Card>
             </Grid>
         </Main>
   )

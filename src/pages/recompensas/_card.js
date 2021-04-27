@@ -20,6 +20,17 @@ export default function Card (props) {
             alert(e.response.data.message)
         })
     }
+
+    async function Click2() {
+        const token = localStorage.getItem('tokendreamfit')
+        api.post('rewards/deliver', {
+            cpf: props.cpf,
+            reward_id: props.key
+        }, {headers: {"Authorization": token}})
+        .then(r => alert('entrega feita com sucesso'))
+        .catch(e => console.log(e.response.data))
+        
+    }
     
     return (
         <CardT>
@@ -32,9 +43,9 @@ export default function Card (props) {
                 <Hr/>   
             </Invisible>
             <Infos><IconDiv><FaInfoCircle /></IconDiv><TextInfos>{props.descricao}</TextInfos></Infos>
-            <Infos><IconDiv><FaShoppingBag /></IconDiv><TextInfos>{`${props.quantidade} itens restantes`}</TextInfos> </Infos>
+            <Infos><IconDiv><FaShoppingBag /></IconDiv><TextInfos>{props.list ? `${props.quantidade} itens comprados` : `${props.quantidade} itens restantes`}</TextInfos> </Infos>
             <Infos><IconDiv><FaDollarSign /></IconDiv><TextInfos>{props.valor}</TextInfos></Infos>
-            <ButtonCard onClick={Click} style={props.quantidade == 0 ? {backgroundColor: '#c4c4c4', cursor: 'default'} : {}}>RESGATAR</ButtonCard>
+            {props.list ?<ButtonCard onClick={Click2} >ENTREGAR</ButtonCard> : <ButtonCard onClick={Click} style={props.quantidade == 0 ? {backgroundColor: '#c4c4c4', cursor: 'default'} : {}}>RESGATAR</ButtonCard>}
         </CardT>
     )
 }
