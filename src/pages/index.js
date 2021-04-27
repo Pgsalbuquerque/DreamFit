@@ -34,7 +34,6 @@ export default function Index () {
         .then(r => {
             if(r.data.status == 202) {
                 if (data.role == 20) {
-                    alert('entrei')
                     routes.push('dashboard')
                 } else {
                     routes.push('horarios')
@@ -42,7 +41,6 @@ export default function Index () {
             } else if (r.data.status == 200) {
                 localStorage.setItem('tokendreamfit', r.data.token)
                 if (data.role == 20) {
-                    alert('entrei')
                     routes.push('dashboard')
                 } else {
                     routes.push('horarios')
