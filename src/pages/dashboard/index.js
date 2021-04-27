@@ -70,11 +70,11 @@ function dashboard() {
                 </Card>
                 <Card href="/acessoacademia" >
                     <TituloCard >Acesso a academia</TituloCard>
-                    <Image style={{width: "80%", marginLeft: "40px"}} src="postarfeed.svg"></Image>
+                    <Image style={{width: "80%", marginLeft: "40px"}} src="dashboard4.svg"></Image>
                 </Card>
                 <Card href="/recompensaporpessoa" >
                     <TituloCard >Recompensa por pessoa</TituloCard>
-                    <Image style={{width: "80%", marginLeft: "40px"}} src="postarfeed.svg"></Image>
+                    <Image style={{width: "80%", marginLeft: "40px"}} src="dashboard5.svg"></Image>
                 </Card>
             </Grid>
         </Main>

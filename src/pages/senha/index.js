@@ -16,12 +16,13 @@ function recuperarsenha() {
     async function Click() {
         const token = routes.query.token
 
-        api.post(`/users/recovery-token/${token}`, {
+        await api.post(`/users/recovery-token/${token}`, {
             confirmNewPassword: confirmacao,
             newPassword: senha
         })
         .then(r => {
-            alert(r.data)
+           alert('senha alterada com sucesso')
+           routes.push('login')
             
         })
         .catch(e => {e.response.data.message})
