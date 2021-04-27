@@ -20,7 +20,10 @@ function recuperarsenha() {
             confirmNewPassword: confirmacao,
             newPassword: senha
         })
-        .then(alert('Senha alterada com sucesso'))
+        .then(r => {
+            alert(r.data)
+            
+        })
         .catch(e => {e.response.data.message})
     }
 
