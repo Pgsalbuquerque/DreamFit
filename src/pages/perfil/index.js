@@ -28,6 +28,10 @@ function perfil() {
 
     }
 
+    function Click2(){
+
+    }
+
     async function AtualizarFoto(file){
         const uuid = localStorage.getItem('dreamfituuid')
         const token = localStorage.getItem('tokendreamfit')
@@ -107,6 +111,7 @@ function perfil() {
                             <NomeIdade>
                                 <Nome>{dados.name}</Nome>
                                 <Idade>{dados.birthDate}</Idade>
+                                <a href="novasenha" style={{fontFamily: 'Fredoka One, arial, roboto',fontSize: '14px', color: '#5A189A' ,background: '#000', border: 'none', cursor: 'pointer'}}>Redefinir senha</a>
                             </NomeIdade>
                             <Plano>
                                 <PlanoText>PLANO</PlanoText>

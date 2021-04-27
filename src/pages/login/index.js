@@ -108,7 +108,7 @@ export default function Login() {
                         <FaLock style={{color: "29292E", marginLeft: "10px"}}/>
                         <Input type="password" placeholder="Senha" value={senha} onChange={e => setSenha(e.target.value)}/>
                     </DivInput>
-                    <SenhaLink href="/">Esqueci minha senha!</SenhaLink>
+                    <SenhaLink href="/recuperarsenha">Esqueci minha senha!</SenhaLink>
                     <ButtonEntrar onClick={() => ClickFunction(cpf,senha,routes)} >ENTRAR</ButtonEntrar>
                     <DivTextinhos>
                         <TextA>Não é nosso aluno?</TextA>
