@@ -29,7 +29,7 @@ function recuperarsenha() {
         <Buttonn onClick={Click2}>ENVIAR</Buttonn>
       </Container>
       <Grid>
-        {recompensas.map((elemento, index) => <Card list cpf={cpf} key={elemento.reward.id} titulo={elemento.reward.title} descricao={elemento.reward.description} quantidade={elemento.quantity} valor={elemento.reward.price} image={elemento.reward.picture}></Card>)}
+        {recompensas.map((elemento, index) => <Card list cpf={cpf} id={elemento.reward.id} titulo={elemento.reward.title} descricao={elemento.reward.description} quantidade={elemento.quantity} valor={elemento.reward.price} image={elemento.reward.picture}></Card>)}
       </Grid>
   </Main>;
 }

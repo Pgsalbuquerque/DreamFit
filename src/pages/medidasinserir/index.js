@@ -12,6 +12,13 @@ import jwt from 'jsonwebtoken'
 function recompensainserir() {
   const [render, setRender] = useState(false)
   const routes = useRouter()
+  const [cpf, setCpf] = useState('')
+  const [peso, setPeso] = useState('')
+  const [braco, setBraco] = useState('')
+  const [perna, setPerna] = useState('')
+  const [cintura, setCintura] = useState('')
+  const [quadril, setQuadril] = useState('')
+
 
   useEffect(async () => {
     const token = localStorage.getItem('tokendreamfit')
@@ -46,44 +53,55 @@ function recompensainserir() {
         )
   }, [])
 
+  async function Click () {
+    const token = localStorage.getItem('tokendreamfit')
+    api.put('users/measures', {
+      arm_measurement: braco,
+      belly_measurement: cintura,
+      cpf: cpf,
+      hip_measurement: quadril,
+      leg_measurement: perna,
+      weight: peso
+
+    }, {headers: {"Authorization": token}})
+    .then(r => alert('medidas inseridas com sucesso'))
+    .catch(e => alert(e.response.data.message))
+  }
+
   return (
     render == false 
         ? <div></div>
         :
       <Main>
           <Titulo>Inserir Medidas</Titulo>
-          <Input placeholder="Cpf"></Input>
+          <Input placeholder="Cpf" value={cpf} onChange={e => setCpf(e.target.value)}></Input>
           <Invisible>
               <Input2>
                 <TextInput>Peso: </TextInput>
-                <InputV placeholder="valor"></InputV>
+                <InputV placeholder="valor" value={peso} onChange={e => setPeso(e.target.value)}></InputV>
               </Input2>
               <Input2>
                 <TextInput>Braço: </TextInput>
-                <InputV placeholder="valor"></InputV>
+                <InputV placeholder="valor" value={braco} onChange={e => setBraco(e.target.value)}></InputV>
               </Input2>
           </Invisible>
           <Invisible>
               <Input2>
                 <TextInput>Perna: </TextInput>
-                <InputV placeholder="valor"></InputV>
+                <InputV placeholder="valor" value={perna} onChange={e => setPerna(e.target.value)}></InputV>
               </Input2>
               <Input2>
                 <TextInput>Cintura: </TextInput>
-                <InputV placeholder="valor"></InputV>
+                <InputV placeholder="valor" value={cintura} onChange={e => setCintura(e.target.value)}></InputV>
               </Input2>
           </Invisible>
-          <Invisible>
+          <Invisible style={{justifyContent: 'center'}}>
               <Input2>
                 <TextInput>Quadril: </TextInput>
-                <InputV placeholder="valor"></InputV>
-              </Input2>
-              <Input2>
-                <TextInput>Peito: </TextInput>
-                <InputV placeholder="valor"></InputV>
+                <InputV placeholder="valor" value={quadril} onChange={e => setQuadril(e.target.value)}></InputV>
               </Input2>
           </Invisible>
-          <Button>Enviar</Button>
+          <Button onClick={Click}>Enviar</Button>
       </Main>
   )
 }

@@ -25,7 +25,7 @@ export default function Card (props) {
         const token = localStorage.getItem('tokendreamfit')
         api.post('rewards/deliver', {
             cpf: props.cpf,
-            reward_id: props.key
+            reward_id: parseInt(props.id)
         }, {headers: {"Authorization": token}})
         .then(r => alert('entrega feita com sucesso'))
         .catch(e => console.log(e.response.data))
