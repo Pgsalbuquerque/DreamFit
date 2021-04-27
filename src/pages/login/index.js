@@ -27,7 +27,12 @@ export default function Login() {
        }).then( r => {
            localStorage.setItem('tokendreamfit', r.data.token)
            localStorage.setItem('dreamfituuid', r.data.uuid)
-           routes.push('/horarios')
+           const data = jwt.decode(r.data.token.substring(7))
+           if (data.role == 20) {
+              routes.push('/dashboard')
+           } else {
+               routes.push('/horarios')
+           }
        }
        ).catch( e => alert(e.response.data.message))
     
@@ -35,9 +40,14 @@ export default function Login() {
 
     useEffect(async () => {
         const token = localStorage.getItem('tokendreamfit')
+        if(!token) {
+            setRender(true)
+            return
+        }
         const data = jwt.decode(token.substring(7))
         await api.get('/users/token',{headers: {"Authorization": token}})
         .then(r => {
+
             if(r.data.status == 202) {
                 if (data.role == 20) {
                     routes.push('dashboard')

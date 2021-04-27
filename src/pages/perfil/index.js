@@ -47,6 +47,9 @@ function perfil() {
     useEffect(async () => {
         const uuid = localStorage.getItem('dreamfituuid')
         const token = localStorage.getItem('tokendreamfit')
+        if (!token) {
+            routes.push('login')
+        }
         const data = jwt.decode(token.substring(7))
         await api.get('/users/token',{headers: {"Authorization": token}})
             .then(r => {

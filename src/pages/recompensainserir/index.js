@@ -15,10 +15,15 @@ function recompensainserir() {
   const [render, setRender] = useState(false);
   const [titulo, setTitulo] = useState('');
   const [descricao, setDescricao] = useState('');
+  const [file, setFile] = useState('')
   const [quantidade, setQuantidade] = useState(0);
   const [valor, setValor] = useState(0);
 
   async function Click(){
+    if (file == '') {
+      alert('Você não inseriu uma imagem')
+      return
+    }
     const token = localStorage.getItem('tokendreamfit')
     await api.post('/rewards', {
       title: titulo,
@@ -26,9 +31,20 @@ function recompensainserir() {
       quantity: quantidade,
       price: valor,
       
-    }, {headers: {"Authorization": token}}).then(() => {
-      alert('Recompensa inserida com sucesso')
-      routes.push('dashboard')
+    }, {headers: {"Authorization": token}}).then(async function (r) {
+      const formdata = new FormData()
+
+      formdata.append('image', file)
+      formdata.append('id', r.data.id)
+      
+      await api.post('/files/rewards', formdata, {headers: {"Authorization": token}})
+      .then(r => {
+        alert('Recompensa inserida com sucesso')
+        routes.push('/dashboard')
+      })
+      .catch(e => {
+        alert(e.response.data.message)
+      })
     }
     ).catch(e => {
       console.log(e.response.data)
@@ -42,6 +58,9 @@ function recompensainserir() {
 
   useEffect(async () => {
     const token = localStorage.getItem('tokendreamfit')
+    if (!token) {
+      routes.push('login')
+    }
     const data = jwt.decode(token.substring(7))
     await api.get('/users/token',{headers: {"Authorization": token}})
         .then(r => {
@@ -76,10 +95,8 @@ function recompensainserir() {
       <Main>
           <Titulo>Inserir Recompensa</Titulo>
           <InputImage>
-            <DescImage>Insira a imagem</DescImage>
-            <ButtonImage>
-              <ImageButton src="uploadimage.svg"></ImageButton>
-            </ButtonImage>
+            <DescImage>Imagem aqui</DescImage>
+              <input type='file' style={{position: 'absolute', opacity: 0}} onChange={e => setFile(e.target.files[0])}></input>
           </InputImage>
           <Input placeholder="Titulo" value={titulo} onChange={e => setTitulo(e.target.value)}></Input>
           <Input placeholder="Descrição" value={descricao} onChange={e => setDescricao(e.target.value)}></Input>

@@ -25,12 +25,16 @@ export default function Index () {
     const routes = useRouter()
 
     useEffect(async () => {
-        const token = localStorage.getItem('tokendreamfit')
+        var token = localStorage.getItem('tokendreamfit')
+        if (!token) {
+            token = ''
+        }
         const data = jwt.decode(token.substring(7))
         await api.get('/users/token',{headers: {"Authorization": token}})
         .then(r => {
             if(r.data.status == 202) {
                 if (data.role == 20) {
+                    alert('entrei')
                     routes.push('dashboard')
                 } else {
                     routes.push('horarios')
@@ -38,6 +42,7 @@ export default function Index () {
             } else if (r.data.status == 200) {
                 localStorage.setItem('tokendreamfit', r.data.token)
                 if (data.role == 20) {
+                    alert('entrei')
                     routes.push('dashboard')
                 } else {
                     routes.push('horarios')

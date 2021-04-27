@@ -15,6 +15,9 @@ function recompensainserir() {
 
   useEffect(async () => {
     const token = localStorage.getItem('tokendreamfit')
+    if (!token) {
+      routes.push('login')
+  }
     const data = jwt.decode(token.substring(7))
     console.log(data)
     await api.get('/users/token',{headers: {"Authorization": token}})

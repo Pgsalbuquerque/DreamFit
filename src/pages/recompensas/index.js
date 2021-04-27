@@ -17,10 +17,14 @@ Grid,DivTransparente} from '../../styles/recompensas/styles'
 export default function Recompensas () {
     const routes = useRouter()
     const [render, setRender] = useState(false);
+    const [fitcoins, setFitcoins] = useState(0);
+    const [store, setStore] = useState([])
     
     useEffect(async () => {
-        const uuid = localStorage.getItem('dreamfituuid')
         const token = localStorage.getItem('tokendreamfit')
+        if (!token) {
+            routes.push('login')
+        }
         const data = jwt.decode(token.substring(7))
         await api.get('/users/token',{headers: {"Authorization": token}})
             .then(r => {
@@ -44,8 +48,18 @@ export default function Recompensas () {
             })
             .catch( e => {
                 routes.push('/login')
-            }
-          )}, [])
+            })
+        
+        await api.get('rewards', {headers: {"Authorization": token}})
+        .then(r => {
+            setFitcoins(r.data.fitcoins)
+            setStore(r.data.store)
+        })
+        .catch(e => {
+            alert(e.response.data.message)
+            routes.push('horarios')
+        })
+        }, [])
 
     return (
         render == false 
@@ -59,7 +73,7 @@ export default function Recompensas () {
                         <Image src="/recompensas1.png"/>
                         <FitCoin>
                             <Coin src="/coin.png"/>
-                            <QtCoins >250</QtCoins>
+                            <QtCoins>{fitcoins}</QtCoins>
                         </FitCoin>
                         <TextFitCoins >Fitcoins</TextFitCoins>
                         <InfosDiv>
@@ -69,22 +83,7 @@ export default function Recompensas () {
                     </DivTransparente>
                 </LeftDiv>
                     <Grid>
-                        <Card titulo="Bolsa Adidas"/>
-                        <Card titulo="Bolsa Adidas"/>
-                        <Card titulo="Bolsa Adidas"/>
-                        <Card titulo="Bolsa Adidas"/>
-                        <Card titulo="Bolsa Adidas"/>
-                        <Card titulo="Bolsa Adidas"/>
-                        <Card titulo="Bolsa Adidas"/>
-                        <Card titulo="Bolsa Adidas"/>
-                        <Card titulo="Bolsa Adidas"/>
-                        <Card titulo="Bolsa Adidas"/>
-                        <Card titulo="Bolsa Adidas"/>
-                        <Card titulo="Bolsa Adidas"/>
-                        <Card titulo="Bolsa Adidas"/>
-                        <Card titulo="Bolsa Adidas"/>
-                        <Card titulo="Bolsa Adidas"/>
-                        <Card titulo="Bolsa Adidas"/>
+                        {store.map((item, index) => <Card id={item.id} titulo={item.title} image={item.picture} descricao={item.description} quantidade={item.quantity} valor={item.price}></Card>)}
                     </Grid>
             </Main>
         </>
