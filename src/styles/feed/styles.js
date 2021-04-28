@@ -34,15 +34,15 @@ export const DivPublicar = styled.div`
 
 export const LeftPublicar = styled.div`
     width: 10vw;
-    height: 40vh;
+    min-height: 40vh;
     display: flex;
     justify-content: center;
     align-items: top;
 `;
 
 export const IconPublicar = styled.img`
-    width: 40%;
-    height: 20%;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     margin-top: 30px;
 `;
@@ -50,14 +50,14 @@ export const IconPublicar = styled.img`
 
 export const RightPublicar = styled.div`
     width: 38vw;
-    height: auto;
+    min-height: 100%;
     display: flex;
     align-items: center;
     justify-content: left;
 `;
 
 export const DivBackground = styled.div`
-    height: 75%;
+    height: auto;
     width: 90%;
     background: #232121;
     display: flex;
@@ -94,10 +94,16 @@ export const DivPublicacoes = styled.div`
     background: #000;
 `;
 
+export const DivDaImagem = styled.div`
+    background-repeat: no-repeat;
+    background-size: cover;
+`;
+
 export const DivImagem = styled.img`
     width: 0;
     height: 0;
     background: #fff;
+    
 `;
 
 export const DivFooter = styled.div`
@@ -158,8 +164,8 @@ export const DivPerfil = styled.div`
 `; 
 
 export const IconPerfil = styled.img`
-    height: 80%;
-    width: 8%;
+    height: 50px;
+    width: 50px;
     border-radius: 50%;
     margin-left: 10%;
 `
@@ -176,6 +182,7 @@ export const Desc = styled.p`
     color: #fff;
     margin-left: 10%;
     margin-right: 10%;
+    width: 80%;
 `; 
 
 export const ImagemPubli = styled.img`
@@ -220,4 +227,42 @@ export const TextIcon = styled.p`
     color: #fff;
     margin-left: 10px;
     font-family: "Fredoka One",Arial, Helvetica, sans-serif;
+`;
+
+export const DivSetinhas = styled.div`
+    width: 100%;
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+`;
+
+export const SetaEsquerda = styled.button`
+    width: 100px;
+    height: 40px;
+    background: #7B2CBF;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    margin-left: 10px;
+    color: #fff;
+    font-family: "Fredoka One",Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    margin-top: 10px;
+`;
+
+export const SetaDireita = styled.button`
+    width: 100px;
+    height: 40px;
+    background: #7B2CBF;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    margin-right: 10px;
+    color: #fff;
+    font-family: "Fredoka One",Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    margin-top: 10px;
 `;
