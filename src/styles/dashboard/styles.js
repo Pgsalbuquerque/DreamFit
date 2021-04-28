@@ -20,7 +20,7 @@ export const Titulo = styled.p`
 export const Grid = styled.div`
     margin-top: 40px;
     display: grid;
-    grid-template-columns: 250px 250px 250px;
+    grid-template-columns: 250px 250px;
     grid-template-rows: 150px 150px;
     grid-column-gap: 50px;
     grid-row-gap: 50px;
