@@ -6,6 +6,8 @@ import { FaUser } from 'react-icons/fa'
 
 import Card from '../recompensas/_card'
 
+import jwt from 'jsonwebtoken'
+
 import api from '../../api/index'
 
 function recuperarsenha() {
