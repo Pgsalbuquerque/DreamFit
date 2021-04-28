@@ -8,6 +8,7 @@ import {Main, Logo, Link, LinkLogo, Links, DivTransparente} from '../styles/_hea
 
 export default function HeaderGeral (props) {
     const telas = ["FEED", "HORARIOS", "RECOMPENSAS", "PERFIL", "TREINOS"]
+    const telasP = ["FEED", "RECOMPENSAS", "PERFIL"]
     const [professor, setProfessor] = useState(false)
 
 
@@ -44,7 +45,7 @@ export default function HeaderGeral (props) {
                 <Logo src="/logo.png"/>
                 </LinkLogo>
                 <Links>
-                    {telas.map((e, index) => e != props.tela ? <Link key={index} href={`/${e}`.toLowerCase()} >{e}</Link> : <div/> )}  
+                    {professor ? telasP.map((e, index) => e != props.tela ? <Link key={index} href={`/${e}`.toLowerCase()} >{e}</Link> : <div/> ) : telas.map((e, index) => e != props.tela ? <Link key={index} href={`/${e}`.toLowerCase()} >{e}</Link> : <div/> )} 
                     {professor ? <Link key={6} href='/busca' >{'INSERIR TREINO'}</Link> : <div></div>}
                 </Links>
             </DivTransparente>
@@ -55,7 +56,8 @@ export default function HeaderGeral (props) {
 
                 <Logo src="/logo.png"/>
                 <Links>
-                    {telas.map((e, index) => e != props.tela ? <Link key={index} href={`/${e}`.toLowerCase()} >{e}</Link> : <div/> )}  
+                    {professor ? telasP.map((e, index) => e != props.tela ? <Link key={index} href={`/${e}`.toLowerCase()} >{e}</Link> : <div/> ) : telas.map((e, index) => e != props.tela ? <Link key={index} href={`/${e}`.toLowerCase()} >{e}</Link> : <div/> )} 
+                    {professor ? <Link key={6} href='/busca' >{'INSERIR TREINO'}</Link> : <div></div>}  
                 </Links>
             </DivTransparente>
         </Main>

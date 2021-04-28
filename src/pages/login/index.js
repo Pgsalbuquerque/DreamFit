@@ -30,6 +30,8 @@ export default function Login() {
            const data = jwt.decode(r.data.token.substring(7))
            if (data.role == 20) {
               routes.push('/dashboard')
+           } else if (data.role ==40){
+               routes.push('perfil')
            } else {
                routes.push('/horarios')
            }
@@ -51,6 +53,8 @@ export default function Login() {
             if(r.data.status == 202) {
                 if (data.role == 20) {
                     routes.push('dashboard')
+                } else if (data.role == 40) {
+                    routes.push('perfil')
                 } else {
                     routes.push('horarios')
                 }
@@ -58,6 +62,8 @@ export default function Login() {
                 localStorage.setItem('tokendreamfit', r.data.token)
                 if (data.role == 20) {
                     routes.push('dashboard')
+                } else if (data.role == 40) {
+                    routes.push('perfil')
                 } else {
                     routes.push('horarios')
                 }

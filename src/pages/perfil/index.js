@@ -43,9 +43,9 @@ function perfil() {
         formdata.append('image', file)
         formdata.append('uuid', uuid)
 
-        await api.post('files', formdata, {headers: {"Authorization": token}})
+        await api.post('files/users', formdata, {headers: {"Authorization": token}})
         .then(r => routes.reload())
-        .catch(e => alert(e.response.message))
+        .catch(e => console.log(e))
     }
 
     useEffect(async () => {
@@ -82,11 +82,9 @@ function perfil() {
 
         await api.get(`/users/private_profile/${uuid}`, {headers: {"Authorization": token}})
         .then(r => {
-            console.log(r.data)
-            console.log(r.data)
             setDados(r.data)
         })
-        .catch(e => alert(e.response.data))
+        .catch(e => alert(e.response))
     }, [])
 
     return (
