@@ -35,6 +35,8 @@ export default function Index () {
             if(r.data.status == 202) {
                 if (data.role == 20) {
                     routes.push('dashboard')
+                } else if (data.role == 40) {
+                    routes.push('perfil')
                 } else {
                     routes.push('horarios')
                 }
@@ -42,7 +44,9 @@ export default function Index () {
                 localStorage.setItem('tokendreamfit', r.data.token)
                 if (data.role == 20) {
                     routes.push('dashboard')
-                } else {
+                } else if (data.role == 40) {
+                    routes.push('perfil')
+                }else {
                     routes.push('horarios')
                 }
             }
